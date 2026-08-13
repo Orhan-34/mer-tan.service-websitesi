@@ -1,0 +1,260 @@
+@import "tailwindcss";
+
+@theme {
+  /* ── Yüzeyler ─────────────────────────────────────────── */
+  --color-ink: #0a0a0a;
+  --color-ink-raised: #121212;
+  --color-ink-sunken: #050505;
+  --color-paper: #f4f4f2;
+  --color-paper-card: #ffffff;
+
+  /* ── Ön plan (metin) ──────────────────────────────────── */
+  --color-fg-dark: #ffffff;
+  --color-fg-dark-muted: #c4c4c4;
+  --color-fg-dark-subtle: #8e8e8e;
+  --color-fg-light: #0f0f0f;
+  --color-fg-light-muted: #5a5a5a;
+  --color-fg-light-subtle: #9a9a9a;
+
+  /* ── Kenarlık & ayırıcı ───────────────────────────────── */
+  --color-line-dark: rgba(255, 255, 255, 0.08);
+  --color-line-dark-strong: rgba(255, 255, 255, 0.2);
+  --color-line-light: #e3e3e1;
+  --color-line-input: #dcdcdc;
+
+  /* ── Durum renkleri ───────────────────────────────────── */
+  --color-success: #1e7b3c;
+  --color-success-bg: #eaf5ee;
+  --color-error: #b3261e;
+  --color-error-bg: #fbedec;
+  --color-focus-ring: #3b82f6;
+
+  /* ── Tipografi ────────────────────────────────────────── */
+  --font-serif: var(--font-newsreader), "Times New Roman", serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  /* ── Radius ───────────────────────────────────────────── */
+  --radius-xs: 3px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+
+  /* ── Container ────────────────────────────────────────── */
+  --container-shell: 1280px;
+  --container-narrow: 840px;
+
+  /* ── Easing ───────────────────────────────────────────── */
+  --ease-out-quint: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Gradient ve gölgeler token değildir; :root üzerinde tanımlanır. */
+:root {
+  --overlay-hero: linear-gradient(
+    90deg,
+    rgba(8, 8, 8, 0.94) 0%,
+    rgba(8, 8, 8, 0.78) 34%,
+    rgba(8, 8, 8, 0.35) 66%,
+    rgba(8, 8, 8, 0.12) 100%
+  );
+  --overlay-hero-mobile: linear-gradient(
+    180deg,
+    rgba(8, 8, 8, 0.55) 0%,
+    rgba(8, 8, 8, 0.8) 55%,
+    rgba(8, 8, 8, 0.94) 100%
+  );
+  --overlay-card: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 42%,
+    rgba(0, 0, 0, 0.55) 72%,
+    rgba(0, 0, 0, 0.88) 100%
+  );
+  --shadow-card: 0 1px 2px rgba(15, 15, 15, 0.04), 0 8px 24px rgba(15, 15, 15, 0.06);
+  --shadow-raised: 0 2px 4px rgba(15, 15, 15, 0.06), 0 16px 40px rgba(15, 15, 15, 0.1);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* 320px'in altında yatay taşmayı kes */
+    overflow-x: clip;
+  }
+
+  body {
+    background: var(--color-ink);
+    color: var(--color-fg-dark);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    letter-spacing: -0.015em;
+    text-wrap: balance;
+    hyphens: none;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    background: #ffffff;
+    color: #0a0a0a;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-focus-ring);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  /* iOS'ta otomatik zoom'u engellemek için form alanları ≥16px */
+  input,
+  select,
+  textarea {
+    font-size: 16px;
+  }
+
+  @media (min-width: 640px) {
+    input,
+    select,
+    textarea {
+      font-size: 14px;
+    }
+  }
+}
+
+@layer utilities {
+  /* Tipografi ölçeği — plan §3.2 */
+  .text-display {
+    font-size: 34px;
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+  }
+  .text-h2 {
+    font-size: 26px;
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+  }
+  .text-h3 {
+    font-size: 20px;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+  }
+  .text-h4 {
+    font-size: 16px;
+    line-height: 1.35;
+    font-weight: 600;
+    font-family: var(--font-sans);
+  }
+  .text-lead {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  .text-body {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  .text-body-sm {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+  .text-label {
+    font-size: 11px;
+    line-height: 1.4;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+  }
+  .text-eyebrow {
+    font-size: 11px;
+    line-height: 1.2;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  @media (min-width: 768px) {
+    .text-display {
+      font-size: 44px;
+    }
+    .text-h2 {
+      font-size: 32px;
+    }
+    .text-h3 {
+      font-size: 22px;
+    }
+    .text-h4 {
+      font-size: 17px;
+    }
+    .text-lead {
+      font-size: 16px;
+    }
+    .text-body {
+      font-size: 15px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .text-display {
+      font-size: 56px;
+    }
+    .text-h2 {
+      font-size: 38px;
+    }
+    .text-h3 {
+      font-size: 24px;
+    }
+    .text-h4 {
+      font-size: 18px;
+    }
+    .text-lead {
+      font-size: 18px;
+    }
+    .text-body-sm {
+      font-size: 14px;
+    }
+    .text-label {
+      font-size: 12px;
+    }
+  }
+
+  /* Scrollbar gizleme (trust bar yatay kaydırma) */
+  .no-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Ken Burns — hero slider aktif slide */
+  @keyframes ken-burns {
+    from {
+      transform: scale(1.06);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+  .animate-ken-burns {
+    animation: ken-burns 7000ms var(--ease-smooth) forwards;
+  }
+}
+
+/* Erişilebilirlik: hareket azaltma tercihi — plan §3.5 */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

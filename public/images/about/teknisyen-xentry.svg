@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1000" viewBox="0 0 800 1000" role="img" aria-label="Teknisyen">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d0d0d"/>
+      <stop offset="55%" stop-color="#1b1b1b"/>
+      <stop offset="100%" stop-color="#2a2a2a"/>
+    </linearGradient>
+    <radialGradient id="s" cx="0.33" cy="0.3" r="0.75">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.14)"/>
+      <stop offset="100%" stop-color="rgba(0,0,0,0)"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="1000" fill="url(#g)"/>
+  <rect x="515" y="0" width="128" height="1000" fill="rgba(255,255,255,0.055)"/><rect x="684" y="0" width="156" height="1000" fill="rgba(255,255,255,0.055)"/><rect x="53" y="0" width="51" height="1000" fill="rgba(255,255,255,0.055)"/><rect x="222" y="0" width="79" height="1000" fill="rgba(255,255,255,0.055)"/><rect x="391" y="0" width="107" height="1000" fill="rgba(255,255,255,0.055)"/><rect x="560" y="0" width="135" height="1000" fill="rgba(255,255,255,0.055)"/><rect x="729" y="0" width="164" height="1000" fill="rgba(255,255,255,0.055)"/>
+  <circle cx="634" cy="799" r="180" fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="1"/><circle cx="319" cy="405" r="247" fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="1"/><circle cx="403" cy="510" r="315" fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="1"/>
+  <rect width="800" height="1000" fill="url(#s)"/>
+  <text x="400" y="500" text-anchor="middle" dominant-baseline="middle"
+        font-family="Helvetica,Arial,sans-serif" font-size="36"
+        letter-spacing="6" fill="rgba(255,255,255,0.22)">TEKNISYEN</text>
+</svg>

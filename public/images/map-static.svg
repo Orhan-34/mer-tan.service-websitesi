@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500" role="img" aria-label="Harita">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#e8e8e6"/>
+      <stop offset="55%" stop-color="#f2f2f0"/>
+      <stop offset="100%" stop-color="#d8d8d6"/>
+    </linearGradient>
+    <radialGradient id="s" cx="0.68" cy="0.3" r="0.75">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.9)"/>
+      <stop offset="100%" stop-color="rgba(0,0,0,0)"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#g)"/>
+  <rect x="416" y="0" width="111" height="500" fill="rgba(15,15,15,0.05)"/><rect x="586" y="0" width="140" height="500" fill="rgba(15,15,15,0.05)"/><rect x="755" y="0" width="168" height="500" fill="rgba(15,15,15,0.05)"/><rect x="124" y="0" width="63" height="500" fill="rgba(15,15,15,0.05)"/><rect x="293" y="0" width="91" height="500" fill="rgba(15,15,15,0.05)"/><rect x="462" y="0" width="119" height="500" fill="rgba(15,15,15,0.05)"/><rect x="631" y="0" width="147" height="500" fill="rgba(15,15,15,0.05)"/>
+  <circle cx="585" cy="369" r="288" fill="none" stroke="rgba(15,15,15,0.10)" stroke-width="1"/><circle cx="669" cy="172" r="130" fill="none" stroke="rgba(15,15,15,0.10)" stroke-width="1"/><circle cx="354" cy="224" r="172" fill="none" stroke="rgba(15,15,15,0.10)" stroke-width="1"/>
+  <rect width="800" height="500" fill="url(#s)"/>
+  <text x="400" y="250" text-anchor="middle" dominant-baseline="middle"
+        font-family="Helvetica,Arial,sans-serif" font-size="23"
+        letter-spacing="5" fill="rgba(15,15,15,0.28)">HARITA</text>
+</svg>

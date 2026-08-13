@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2400" height="1350" viewBox="0 0 2400 1350" role="img" aria-label="Hero · GLE">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d0d0d"/>
+      <stop offset="55%" stop-color="#1b1b1b"/>
+      <stop offset="100%" stop-color="#2a2a2a"/>
+    </linearGradient>
+    <radialGradient id="s" cx="0.52" cy="0.3" r="0.75">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.14)"/>
+      <stop offset="100%" stop-color="rgba(0,0,0,0)"/>
+    </radialGradient>
+  </defs>
+  <rect width="2400" height="1350" fill="url(#g)"/>
+  <rect x="308" y="0" width="97" height="1350" fill="rgba(255,255,255,0.055)"/><rect x="815" y="0" width="182" height="1350" fill="rgba(255,255,255,0.055)"/><rect x="1322" y="0" width="266" height="1350" fill="rgba(255,255,255,0.055)"/><rect x="1830" y="0" width="351" height="1350" fill="rgba(255,255,255,0.055)"/><rect x="2337" y="0" width="435" height="1350" fill="rgba(255,255,255,0.055)"/><rect x="444" y="0" width="120" height="1350" fill="rgba(255,255,255,0.055)"/><rect x="951" y="0" width="205" height="1350" fill="rgba(255,255,255,0.055)"/>
+  <circle cx="1284" cy="731" r="565" fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="1"/><circle cx="1537" cy="874" r="679" fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="1"/><circle cx="1791" cy="1016" r="253" fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="1"/>
+  <rect width="2400" height="1350" fill="url(#s)"/>
+  <text x="1200" y="675" text-anchor="middle" dominant-baseline="middle"
+        font-family="Helvetica,Arial,sans-serif" font-size="61"
+        letter-spacing="10" fill="rgba(255,255,255,0.22)">HERO · GLE</text>
+</svg>

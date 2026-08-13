@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-label="Atolye">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d0d0d"/>
+      <stop offset="55%" stop-color="#1b1b1b"/>
+      <stop offset="100%" stop-color="#2a2a2a"/>
+    </linearGradient>
+    <radialGradient id="s" cx="0.42" cy="0.3" r="0.75">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.14)"/>
+      <stop offset="100%" stop-color="rgba(0,0,0,0)"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#g)"/>
+  <rect x="1059" y="0" width="220" height="800" fill="rgba(255,255,255,0.055)"/><rect x="113" y="0" width="62" height="800" fill="rgba(255,255,255,0.055)"/><rect x="366" y="0" width="104" height="800" fill="rgba(255,255,255,0.055)"/><rect x="620" y="0" width="146" height="800" fill="rgba(255,255,255,0.055)"/><rect x="874" y="0" width="189" height="800" fill="rgba(255,255,255,0.055)"/><rect x="1127" y="0" width="231" height="800" fill="rgba(255,255,255,0.055)"/><rect x="181" y="0" width="73" height="800" fill="rgba(255,255,255,0.055)"/>
+  <circle cx="495" cy="335" r="256" fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="1"/><circle cx="621" cy="419" r="324" fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="1"/><circle cx="748" cy="504" r="391" fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="1"/>
+  <rect width="1200" height="800" fill="url(#s)"/>
+  <text x="600" y="400" text-anchor="middle" dominant-baseline="middle"
+        font-family="Helvetica,Arial,sans-serif" font-size="36"
+        letter-spacing="6" fill="rgba(255,255,255,0.22)">ATOLYE</text>
+</svg>

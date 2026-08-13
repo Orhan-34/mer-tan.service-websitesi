@@ -1,0 +1,73 @@
+import { ChevronRight, Clock, Phone } from "lucide-react";
+import Link from "next/link";
+import { MapEmbed } from "@/components/shared/map-embed";
+import { Button } from "@/components/ui/button";
+import { Container } from "@/components/ui/container";
+import type { Locale } from "@/lib/i18n/config";
+import type { Dictionary } from "@/lib/i18n/dictionaries";
+import { path } from "@/lib/i18n/routes";
+import { siteConfig } from "@/lib/site-config";
+
+export function ClosingCta({
+  locale,
+  dict,
+}: {
+  locale: Locale;
+  dict: Dictionary;
+}) {
+  return (
+    <section className="bg-ink py-16 lg:py-20">
+      <Container>
+        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2">
+          <div>
+            <h2 className="text-h2 text-white">{dict.closing.title}</h2>
+
+            <p className="text-body mt-4 max-w-[480px] text-fg-dark-muted">
+              {dict.closing.text}
+            </p>
+
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <Button asChild variant="primary" size="lg">
+                <Link href={path(locale, "appointment")}>
+                  {dict.common.bookAppointmentLong}
+                </Link>
+              </Button>
+              <Button asChild variant="outline-light" size="lg">
+                <a href={`tel:${siteConfig.contact.phone}`}>
+                  <Phone className="size-4" strokeWidth={1.5} aria-hidden="true" />
+                  {dict.common.callNow}
+                </a>
+              </Button>
+            </div>
+
+            <p className="mt-6 flex items-center gap-2 text-[12.5px] text-fg-dark-subtle">
+              <Clock className="size-4" strokeWidth={1.5} aria-hidden="true" />
+              {dict.hoursShort}
+            </p>
+          </div>
+
+          <div>
+            <MapEmbed
+              dict={dict}
+              embedUrl={process.env.NEXT_PUBLIC_GOOGLE_MAPS_EMBED_URL}
+            />
+
+            <a
+              href={siteConfig.address.directionsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group mt-3 inline-flex items-center gap-1 text-[12.5px] text-fg-dark-muted transition-colors hover:text-white"
+            >
+              {dict.common.getDirectionsLong}
+              <ChevronRight
+                className="size-3.5 transition-transform group-hover:translate-x-0.5"
+                strokeWidth={1.5}
+                aria-hidden="true"
+              />
+            </a>
+          </div>
+        </div>
+      </Container>
+    </section>
+  );
+}

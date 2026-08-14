@@ -58,12 +58,8 @@
     rgba(8, 8, 8, 0.35) 66%,
     rgba(8, 8, 8, 0.12) 100%
   );
-  --overlay-hero-mobile: linear-gradient(
-    180deg,
-    rgba(8, 8, 8, 0.55) 0%,
-    rgba(8, 8, 8, 0.8) 55%,
-    rgba(8, 8, 8, 0.94) 100%
-  );
+  /* Not: `--overlay-hero` yalnızca `lg` ve üstünde kullanılır. Dar ekranda
+     metin görselin altında durduğu için ayrı bir mobil gradyan yoktur. */
   --overlay-card: linear-gradient(
     180deg,
     rgba(0, 0, 0, 0) 42%,
@@ -232,19 +228,6 @@
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }
-
-  /* Ken Burns — hero slider aktif slide */
-  @keyframes ken-burns {
-    from {
-      transform: scale(1.06);
-    }
-    to {
-      transform: scale(1);
-    }
-  }
-  .animate-ken-burns {
-    animation: ken-burns 7000ms var(--ease-smooth) forwards;
-  }
 }
 
 /* Erişilebilirlik: hareket azaltma tercihi — plan §3.5 */
@@ -258,3 +241,4 @@
     scroll-behavior: auto !important;
   }
 }
+

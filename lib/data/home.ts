@@ -12,14 +12,21 @@ import {
 
 /* ── Hero slider ────────────────────────────────────────────────── */
 
-export const heroSlideIds = ["dealership", "expertise", "workshop"] as const;
-export type HeroSlideId = (typeof heroSlideIds)[number];
-
-export const heroSlideImages: Record<HeroSlideId, string> = {
-  dealership: "/images/hero/hero-01-bayi.svg",
-  expertise: "/images/hero/hero-02-gle.svg",
-  workshop: "/images/hero/hero-03-atolye.svg",
-};
+/**
+ * Slider yalnızca görsel gösterir; slide başına başlık/açıklama yoktur.
+ * Bu yüzden görseller dekoratif sayılır ve `alt=""` ile sunulur.
+ * İlk sıradaki görsel LCP'dir — en hafif dosya başa konmuştur.
+ */
+export const heroSlideImages = [
+  "/images/cars/mercedes-filo.webp",
+  "/images/cars/mercedes-sedan.webp",
+  "/images/cars/mercedes-suv.webp",
+  "/images/cars/mercedes-panelvan.webp",
+  "/images/cars/mercedes-mini-panelvan.webp",
+  "/images/cars/mercedes-minibus.webp",
+  "/images/cars/mercedes-otobus.webp",
+  "/images/cars/mercedes-tir.webp",
+] as const;
 
 /* ── Trust bar ──────────────────────────────────────────────────── */
 

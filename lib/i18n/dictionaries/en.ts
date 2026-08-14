@@ -66,32 +66,13 @@ export const en: Dictionary = {
   },
 
   hero: {
+    title: "Your Mercedes-Benz is in expert hands.",
     ctaPrimary: "Book a Service Appointment",
     ctaSecondary: "Explore Our Services",
     prev: "Previous slide",
     next: "Next slide",
     slideLabel: "Slide",
     sliderLabel: "Featured images",
-    slides: {
-      dealership: {
-        title: "Your Mercedes-Benz is in expert hands.",
-        subtitle:
-          "Specialist diagnosis and lasting repairs for engine ECU and electronic faults.",
-        alt: "Black Mercedes-Benz E-Class in front of the Koluman İstanbul Mercedes-Benz authorised service building",
-      },
-      expertise: {
-        title: "The right diagnosis for electronic faults.",
-        subtitle:
-          "With XENTRY equipment and genuine software access we trace faults to their source.",
-        alt: "Silver Mercedes-Benz GLE in front of modern concrete architecture",
-      },
-      workshop: {
-        title: "Authorised standards, specialist team.",
-        subtitle:
-          "Mercedes-Benz trained technicians, genuine parts and a documented process.",
-        alt: "Mercedes-AMG GT in the service workshop with a technician work area",
-      },
-    },
   },
 
   trust: {

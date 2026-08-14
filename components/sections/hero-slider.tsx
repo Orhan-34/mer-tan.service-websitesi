@@ -8,7 +8,7 @@ import Link from "next/link";
 import * as React from "react";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
-import { heroSlideIds, heroSlideImages } from "@/lib/data/home";
+import { heroSlideImages } from "@/lib/data/home";
 import { usePrefersReducedMotion } from "@/lib/hooks/use-prefers-reduced-motion";
 import type { Locale } from "@/lib/i18n/config";
 import type { Dictionary } from "@/lib/i18n/dictionaries";
@@ -70,131 +70,149 @@ export function HeroSlider({
       onKeyDown={onKeyDown}
       className="relative bg-ink"
     >
-      <div className="overflow-hidden" ref={emblaRef}>
-        <div className="flex">
-          {heroSlideIds.map((id, index) => {
-            const slide = dict.hero.slides[id];
-            const active = index === selected;
-
-            return (
+      {/* 1 — Görsel şeridi. Slide'lar metin içermez; başlık ve butonlar
+             aşağıdaki katmandadır, böylece slide değişse de yerinde kalır.
+             Dar ekranda kutu görselin oranını alır (16:9) — kırpma sıfır.
+             `lg`'den itibaren yükseklik sabitlenir ve metin üzerine biner. */}
+      <div className="relative">
+        <div className="overflow-hidden" ref={emblaRef}>
+          <div className="flex">
+            {heroSlideImages.map((src, index) => (
               <div
-                key={id}
+                key={src}
                 role="group"
                 aria-roledescription="slide"
-                aria-label={`${dict.hero.slideLabel} ${index + 1} / ${heroSlideIds.length}`}
-                aria-hidden={!active}
-                className="relative min-w-0 flex-[0_0_100%]"
+                aria-label={`${dict.hero.slideLabel} ${index + 1} / ${heroSlideImages.length}`}
+                aria-hidden={index !== selected}
+                className="relative aspect-[16/9] min-w-0 flex-[0_0_100%] lg:aspect-auto lg:h-[680px]"
               >
-                {/* 1 — Görsel katmanı */}
-                <div className="absolute inset-0 overflow-hidden">
-                  <Image
-                    src={heroSlideImages[id]}
-                    alt={slide.alt}
-                    fill
-                    priority={index === 0}
-                    loading={index === 0 ? undefined : "lazy"}
-                    sizes="100vw"
-                    className={cn(
-                      "object-cover object-[70%_center] md:object-[65%_center]",
-                      active && !reducedMotion && "animate-ken-burns",
-                    )}
-                  />
-                </div>
-
-                {/* 2 — Okunabilirlik gradyanı */}
-                <div
-                  aria-hidden="true"
-                  className="absolute inset-0 bg-[var(--overlay-hero-mobile)] lg:bg-[var(--overlay-hero)]"
+                <Image
+                  src={src}
+                  alt=""
+                  fill
+                  // `priority` Next.js 16'da kullanımdan kaldırıldı. İlk slide
+                  // LCP olduğu için erken yüklenir; `preload` ile birlikte
+                  // kullanılamayacağı için `loading`/`fetchPriority` seçildi.
+                  loading={index === 0 ? "eager" : "lazy"}
+                  fetchPriority={index === 0 ? "high" : "auto"}
+                  sizes="100vw"
+                  // Kaynak dosya zaten sıkıştırılmış WebP. Varsayılan 75 ile
+                  // yeniden kodlamak üst üste ikinci kayıp demek olurdu.
+                  quality={90}
+                  className="object-cover object-center"
                 />
-
-                {/* 3 — İçerik */}
-                <Container className="relative flex min-h-[520px] items-end pb-28 pt-[calc(4rem+3rem)] md:min-h-[560px] lg:min-h-[680px] lg:items-center lg:pb-24 lg:pt-[72px]">
-                  <div className="max-w-[560px]">
-                    {/* Sayfada tek h1 bulunmalı; diğer slide başlıkları görsel
-                        olarak aynı ama semantik olarak paragraftır. */}
-                    {index === 0 ? (
-                      <h1 className="text-display text-white">{slide.title}</h1>
-                    ) : (
-                      <p className="text-display text-white [font-family:var(--font-serif)] [text-wrap:balance]">
-                        {slide.title}
-                      </p>
-                    )}
-
-                    <p className="text-lead mt-5 max-w-[460px] text-fg-dark-muted">
-                      {slide.subtitle}
-                    </p>
-
-                    <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-                      <Button asChild variant="primary" size="lg" tabIndex={active ? undefined : -1}>
-                        <Link href={path(locale, "appointment")}>
-                          {dict.hero.ctaPrimary}
-                        </Link>
-                      </Button>
-                      <Button
-                        asChild
-                        variant="outline-light"
-                        size="lg"
-                        tabIndex={active ? undefined : -1}
-                      >
-                        <Link href={path(locale, "services")}>
-                          {dict.hero.ctaSecondary}
-                        </Link>
-                      </Button>
-                    </div>
-                  </div>
-                </Container>
               </div>
-            );
-          })}
+            ))}
+          </div>
         </div>
+
+        {/* 2 — Header şeridi. Sabit header her genişlikte görselin üstüne
+               biniyor; açık gökyüzünde logo ve navigasyon okunmaz oluyordu. */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-black/60 to-transparent lg:h-32 lg:from-black/55"
+        />
+
+        {/* 3 — Okunabilirlik gradyanı, yalnızca metnin görsele bindiği
+               `lg` ve üstünde. Dar ekranda metin görselin altında durduğu
+               için gradyana gerek yoktur ve araçları gereksiz karartır.
+               (Not: değişkeni arka plana verirken baştaki `image:` ipucu
+               şarttır — onsuz `background-color` üretilir, gradyan geçersiz
+               renk sayılır ve katman hiç çizilmez.) */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 hidden lg:block lg:bg-[image:var(--overlay-hero)]"
+        />
+
       </div>
 
-      {/* Kontroller */}
-      <Container className="pointer-events-none absolute inset-x-0 bottom-8 flex items-end justify-between">
-        <div
-          role="tablist"
-          aria-label={dict.hero.sliderLabel}
-          className="pointer-events-auto flex items-center gap-2"
-        >
-          {heroSlideIds.map((id, index) => (
-            <button
-              key={id}
-              type="button"
-              role="tab"
-              aria-selected={index === selected}
-              aria-label={`${dict.hero.slideLabel} ${index + 1}`}
-              onClick={() => embla?.scrollTo(index)}
-              className="grid h-11 w-11 place-items-center"
-            >
-              <span
-                className={cn(
-                  "block h-[3px] w-8 rounded-full transition-colors duration-300",
-                  index === selected ? "bg-white" : "bg-white/25",
-                )}
-              />
-            </button>
-          ))}
-        </div>
+      {/* 4 — Kontroller. Dar ekranda görselin altında koyu zeminde durur;
+             fotoğrafın üzerindeyken pasif noktalar açık asfaltta kayboluyor
+             ve araçların üstüne biniyordu. `lg`'de görsele geri döner. */}
+      <Container className="relative z-10 flex items-end justify-between pt-4 lg:pointer-events-none lg:absolute lg:inset-x-0 lg:bottom-8 lg:pt-0">
+          <div
+            role="tablist"
+            aria-label={dict.hero.sliderLabel}
+            className="pointer-events-auto flex items-center gap-2"
+          >
+            {heroSlideImages.map((src, index) => (
+              <button
+                key={src}
+                type="button"
+                role="tab"
+                aria-selected={index === selected}
+                aria-label={`${dict.hero.slideLabel} ${index + 1}`}
+                onClick={() => embla?.scrollTo(index)}
+                className="grid h-11 w-7 place-items-center sm:w-11"
+              >
+                <span
+                  className={cn(
+                    "block h-[3px] w-5 rounded-full transition-colors duration-300 sm:w-8",
+                    index === selected ? "bg-white" : "bg-white/25",
+                  )}
+                />
+              </button>
+            ))}
+          </div>
 
-        <div className="pointer-events-auto hidden gap-2 lg:flex">
-          <button
-            type="button"
-            onClick={() => embla?.scrollPrev()}
-            aria-label={dict.hero.prev}
-            className="grid size-11 place-items-center rounded-sm border border-line-dark-strong text-white transition-colors hover:bg-white/10"
-          >
-            <ChevronLeft className="size-5" strokeWidth={1.5} aria-hidden="true" />
-          </button>
-          <button
-            type="button"
-            onClick={() => embla?.scrollNext()}
-            aria-label={dict.hero.next}
-            className="grid size-11 place-items-center rounded-sm border border-line-dark-strong text-white transition-colors hover:bg-white/10"
-          >
-            <ChevronRight className="size-5" strokeWidth={1.5} aria-hidden="true" />
-          </button>
-        </div>
+          <div className="pointer-events-auto hidden gap-2 lg:flex">
+            <button
+              type="button"
+              onClick={() => embla?.scrollPrev()}
+              aria-label={dict.hero.prev}
+              className="grid size-11 place-items-center rounded-sm border border-line-dark-strong text-white transition-colors hover:bg-white/10"
+            >
+              <ChevronLeft className="size-5" strokeWidth={1.5} aria-hidden="true" />
+            </button>
+            <button
+              type="button"
+              onClick={() => embla?.scrollNext()}
+              aria-label={dict.hero.next}
+              className="grid size-11 place-items-center rounded-sm border border-line-dark-strong text-white transition-colors hover:bg-white/10"
+            >
+              <ChevronRight className="size-5" strokeWidth={1.5} aria-hidden="true" />
+            </button>
+          </div>
       </Container>
+
+      {/* 5 — İçerik. Dar ekranda görselin altında normal akışta; `lg`'den
+             itibaren görselin üzerine binen mutlak katman. Üstteki katman
+             `pointer-events-none` olmazsa kaydırma hareketini yutar. */}
+      <div className="relative pb-12 pt-6 lg:pointer-events-none lg:absolute lg:inset-0 lg:flex lg:items-center lg:py-0 lg:pt-[72px]">
+        <Container>
+          <div className="max-w-[560px]">
+            <h1 className="text-display text-white">{dict.hero.title}</h1>
+
+            {/* Dar ekranda iki buton yan yana. Etiketler `lg` boyutunda tek
+                satırda ~439px tutuyor, 390px ekranda kullanılabilir alan ise
+                350px — bu yüzden mobilde eşit genişliğe bölünür ve metnin
+                sarmasına izin verilir (`whitespace-nowrap` geçersiz kılınır).
+                Yükseklik sabit `h-12` kalırsa iki satır taşacağı için mobilde
+                `h-auto` + `min-h-12`. `sm`'den itibaren eski davranış.
+                `pointer-events-auto` sarmalayıcıda olursa tüm şerit kaydırmayı
+                yutar, o yüzden butonların üzerinde. */}
+            <div className="mt-8 flex items-stretch gap-3 sm:flex-wrap sm:items-center">
+              <Button
+                asChild
+                variant="primary"
+                size="lg"
+                className="pointer-events-auto h-auto min-h-12 min-w-0 flex-1 whitespace-normal px-4 py-2.5 text-center leading-tight sm:h-12 sm:flex-none sm:whitespace-nowrap sm:px-7 sm:py-0"
+              >
+                <Link href={path(locale, "appointment")}>{dict.hero.ctaPrimary}</Link>
+              </Button>
+              <Button
+                asChild
+                variant="outline-light"
+                size="lg"
+                className="pointer-events-auto h-auto min-h-12 min-w-0 flex-1 whitespace-normal px-4 py-2.5 text-center leading-tight sm:h-12 sm:flex-none sm:whitespace-nowrap sm:px-7 sm:py-0"
+              >
+                <Link href={path(locale, "services")}>{dict.hero.ctaSecondary}</Link>
+              </Button>
+            </div>
+          </div>
+        </Container>
+      </div>
+
     </section>
   );
 }

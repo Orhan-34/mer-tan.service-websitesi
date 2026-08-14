@@ -64,32 +64,13 @@ export const tr = {
   },
 
   hero: {
+    title: "Mercedes-Benz'iniz emin ellerde.",
     ctaPrimary: "Servis Randevusu Al",
     ctaSecondary: "Hizmetlerimizi İnceleyin",
     prev: "Önceki görsel",
     next: "Sonraki görsel",
     slideLabel: "Görsel",
     sliderLabel: "Öne çıkan görseller",
-    slides: {
-      dealership: {
-        title: "Mercedes-Benz'iniz emin ellerde.",
-        subtitle:
-          "Motor beyni ve elektronik arızalarda uzman teşhis ve kalıcı çözüm.",
-        alt: "Koluman İstanbul Mercedes-Benz yetkili servis binası önünde siyah Mercedes-Benz E-Serisi",
-      },
-      expertise: {
-        title: "Elektronik arızada doğru teşhis.",
-        subtitle:
-          "XENTRY donanımı ve orijinal yazılım erişimiyle arızanın kaynağına iniyoruz.",
-        alt: "Modern beton mimari önünde gümüş Mercedes-Benz GLE",
-      },
-      workshop: {
-        title: "Yetkili servis standardı, uzman ekip.",
-        subtitle:
-          "Mercedes-Benz eğitimli teknisyenler, orijinal parça ve süreç güvencesi.",
-        alt: "Servis atölyesinde Mercedes-AMG GT ve teknisyen çalışma alanı",
-      },
-    },
   },
 
   trust: {

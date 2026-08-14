@@ -45,10 +45,10 @@ export default async function OpengraphImage({
 
         <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
           <span style={{ fontSize: 60, lineHeight: 1.1, maxWidth: 900 }}>
-            {dict.hero.slides.dealership.title}
+            {dict.hero.title}
           </span>
           <span style={{ fontSize: 26, color: "#C4C4C4", maxWidth: 820 }}>
-            {dict.hero.slides.dealership.subtitle}
+            {dict.brand.blurb}
           </span>
         </div>
 

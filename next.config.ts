@@ -27,6 +27,10 @@ const nextConfig: NextConfig = {
     formats: ["image/avif", "image/webp"],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048],
     minimumCacheTTL: 31536000,
+    // Next.js 16'da varsayılan `[75]`; listede olmayan bir `quality` değeri
+    // sessizce en yakınına yuvarlanır. Hero fotoğrafları zaten sıkıştırılmış
+    // WebP olduğu için 90 ile yeniden kodlanır, aksi halde kayıp üst üste biner.
+    qualities: [75, 90],
     // Yer tutucu görseller SVG olduğu için gereklidir. Gerçek fotoğraflar
     // (.webp/.avif) eklendiğinde bu üç satır kaldırılabilir.
     dangerouslyAllowSVG: true,

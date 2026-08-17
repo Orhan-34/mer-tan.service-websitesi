@@ -1,7 +1,7 @@
 "use client";
 
 import * as NavigationMenu from "@radix-ui/react-navigation-menu";
-import { ChevronDown, Menu } from "lucide-react";
+import { ChevronDown, Menu, Phone } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import * as React from "react";
@@ -15,6 +15,7 @@ import type { Locale } from "@/lib/i18n/config";
 import type { Dictionary } from "@/lib/i18n/dictionaries";
 import { path } from "@/lib/i18n/routes";
 import { mainNav, serviceNav } from "@/lib/nav";
+import { siteConfig } from "@/lib/site-config";
 import { cn } from "@/lib/utils";
 
 type SiteHeaderProps = {
@@ -108,24 +109,6 @@ export function SiteHeader({ locale, dict }: SiteHeaderProps) {
                       ))}
                     </div>
 
-                    <div className="mt-3 flex items-center justify-between gap-4 rounded-sm border border-line-dark bg-ink p-4">
-                      <div>
-                        <p className="text-[13px] font-semibold text-white">
-                          {dict.megaMenu.promoTitle}
-                        </p>
-                        <p className="mt-1 text-[12px] text-fg-dark-subtle">
-                          {dict.megaMenu.promoText}
-                        </p>
-                      </div>
-                      <NavigationMenu.Link asChild>
-                        <Button asChild variant="primary" size="sm">
-                          <Link href={path(locale, "appointment")}>
-                            {dict.megaMenu.promoCta}
-                          </Link>
-                        </Button>
-                      </NavigationMenu.Link>
-                    </div>
-
                     <NavigationMenu.Link asChild>
                       <Link
                         href={servicesHref}
@@ -163,10 +146,15 @@ export function SiteHeader({ locale, dict }: SiteHeaderProps) {
             className="hidden sm:flex"
           />
 
+          {/* Randevu CTA'sı yerine doğrudan arama — tek tıkla dönüşüm. */}
           <Button asChild variant="primary" size="sm" className="hidden sm:inline-flex">
-            <Link href={path(locale, "appointment")}>
-              {dict.common.bookAppointment}
-            </Link>
+            <a
+              href={`tel:${siteConfig.contact.phone}`}
+              aria-label={`${dict.common.callNow}: ${siteConfig.contact.phoneDisplay}`}
+            >
+              <Phone className="size-3.5" strokeWidth={1.5} aria-hidden="true" />
+              {siteConfig.contact.phoneDisplay}
+            </a>
           </Button>
 
           <button

@@ -5,16 +5,15 @@ import { featuredServiceIds, serviceIds, serviceMeta } from "@/lib/data/services
 
 export type NavLink = { key: RouteKey; label: string; href: string };
 
-/** Header ve mobil menüde kullanılan ana navigasyon. */
+/**
+ * Header ve mobil menüde kullanılan ana navigasyon.
+ * "Servis Randevusu" bilinçli olarak listede yok — sayfa ayakta ama menüde
+ * gösterilmiyor; header'ın dönüşüm noktası doğrudan arama butonu.
+ */
 export function mainNav(locale: Locale, dict: Dictionary): NavLink[] {
   return [
     { key: "home", label: dict.nav.home, href: path(locale, "home") },
     { key: "services", label: dict.nav.services, href: path(locale, "services") },
-    {
-      key: "appointment",
-      label: dict.nav.appointment,
-      href: path(locale, "appointment"),
-    },
     {
       key: "campaigns",
       label: dict.nav.campaigns,
@@ -24,12 +23,10 @@ export function mainNav(locale: Locale, dict: Dictionary): NavLink[] {
   ];
 }
 
-/** Footer "Hızlı Linkler" kolonu — randevu linki yalnızca header'da duruyor. */
+/** Footer "Hızlı Linkler" kolonu — iletişim en sona alınır. */
 export function footerNav(locale: Locale, dict: Dictionary): NavLink[] {
   return [
-    ...mainNav(locale, dict).filter(
-      (link) => link.key !== "appointment" && link.key !== "contact",
-    ),
+    ...mainNav(locale, dict).filter((link) => link.key !== "contact"),
     { key: "faq", label: dict.nav.faq, href: path(locale, "faq") },
     { key: "about", label: dict.nav.about, href: path(locale, "about") },
     { key: "contact", label: dict.nav.contact, href: path(locale, "contact") },

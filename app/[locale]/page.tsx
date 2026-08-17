@@ -18,6 +18,17 @@ import { isLocale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
 import { faqPageSchema } from "@/lib/schema";
 import { buildMetadata } from "@/lib/seo";
+import { cn } from "@/lib/utils";
+
+/**
+ * Anasayfadaki randevu formu (`id="randevu"`) geçici olarak pasif.
+ *
+ * Bileşen ve tüm form akışı (server action, doğrulama, e-posta) yerinde duruyor;
+ * yalnızca anasayfada render edilmiyor. Kapalıyken "Neden biz" kartı tek başına
+ * dar kolonda gösterilir. Yeniden yayına almak için bu bayrağı `true` yapmak
+ * yeterli. `/randevu` ve `/iletisim` sayfalarındaki formlar bundan etkilenmez.
+ */
+const HOME_APPOINTMENT_FORM_ENABLED: boolean = false;
 
 export async function generateMetadata({
   params,
@@ -51,10 +62,18 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
 
       {/* 6–9 · açık blok: iş yapma alanı */}
       <section className="bg-paper py-20 lg:py-28">
-        <Container>
-          <div className="grid grid-cols-1 items-start gap-6 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-8">
+        <Container size={HOME_APPOINTMENT_FORM_ENABLED ? "shell" : "narrow"}>
+          <div
+            className={cn(
+              "grid grid-cols-1 items-start gap-6 lg:gap-8",
+              HOME_APPOINTMENT_FORM_ENABLED &&
+                "lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)]",
+            )}
+          >
             <WhyUs locale={locale} dict={dict} />
-            <AppointmentForm locale={locale} dict={dict} />
+            {HOME_APPOINTMENT_FORM_ENABLED ? (
+              <AppointmentForm locale={locale} dict={dict} />
+            ) : null}
           </div>
         </Container>
       </section>

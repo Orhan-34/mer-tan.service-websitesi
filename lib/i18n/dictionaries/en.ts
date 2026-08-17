@@ -444,10 +444,10 @@ export const en: Dictionary = {
     campaigns: {
       title: "Offers",
       description:
-        "Browse our current service and maintenance offers. Book an appointment to take advantage of them.",
+        "Browse our current service and maintenance offers. Be the first to hear about new deals.",
       empty:
         "There are no active offers at the moment. Follow us for the latest deals.",
-      emptyCta: "Book an appointment",
+      emptySocial: "Follow us on social media",
     },
     about: {
       title: "About Us",
@@ -656,7 +656,7 @@ export const en: Dictionary = {
     campaigns: {
       title: "Mercedes-Benz Service Offers | Koluman",
       description:
-        "Browse our current service and maintenance offers and book an appointment to use them.",
+        "Browse our current service and maintenance offers and be the first to hear about new deals.",
     },
     about: {
       title: "About Us | Koluman İstanbul Mercedes-Benz Service",

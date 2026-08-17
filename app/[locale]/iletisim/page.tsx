@@ -144,6 +144,7 @@ export default async function ContactPage({
                   target="_blank"
                   rel="noopener noreferrer"
                 >
+                  <MapPin className="size-4" strokeWidth={1.5} aria-hidden="true" />
                   {dict.common.getDirectionsLong}
                 </a>
               </Button>

@@ -445,10 +445,10 @@ export const tr = {
     campaigns: {
       title: "Kampanyalar",
       description:
-        "Güncel bakım ve servis kampanyalarımızı inceleyin. Fırsatlardan yararlanmak için randevu oluşturun.",
+        "Güncel bakım ve servis kampanyalarımızı inceleyin. Fırsatlardan ilk siz haberdar olun.",
       empty:
         "Şu anda aktif kampanyamız bulunmuyor. Güncel fırsatlar için bizi takip edin.",
-      emptyCta: "Randevu oluştur",
+      emptySocial: "Bizi sosyal medyada takip edin",
     },
     about: {
       title: "Hakkımızda",
@@ -657,7 +657,7 @@ export const tr = {
     campaigns: {
       title: "Mercedes-Benz Servis Kampanyaları | Koluman",
       description:
-        "Güncel bakım ve servis kampanyalarımızı inceleyin. Fırsatlardan yararlanmak için randevu oluşturun.",
+        "Güncel bakım ve servis kampanyalarımızı inceleyin. Fırsatlardan ilk siz haberdar olun.",
     },
     about: {
       title: "Hakkımızda | Koluman İstanbul Mercedes-Benz Servisi",

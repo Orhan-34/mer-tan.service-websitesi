@@ -1,4 +1,4 @@
-import { ChevronRight, Phone } from "lucide-react";
+import { MapPin, Phone } from "lucide-react";
 import { MapEmbed } from "@/components/shared/map-embed";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
@@ -42,19 +42,17 @@ export function ClosingCta({ dict }: { dict: Dictionary }) {
               }
             />
 
-            <a
-              href={siteConfig.address.directionsUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group mt-3 inline-flex items-center gap-1 text-[12.5px] text-fg-dark-muted transition-colors hover:text-white"
-            >
-              {dict.common.getDirectionsLong}
-              <ChevronRight
-                className="size-3.5 transition-transform group-hover:translate-x-0.5"
-                strokeWidth={1.5}
-                aria-hidden="true"
-              />
-            </a>
+            {/* İletişim sayfasındaki yol tarifi butonuyla aynı görünüm. */}
+            <Button asChild variant="outline-light" size="md" className="mt-4">
+              <a
+                href={siteConfig.address.directionsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <MapPin className="size-4" strokeWidth={1.5} aria-hidden="true" />
+                {dict.common.getDirectionsLong}
+              </a>
+            </Button>
           </div>
         </div>
       </Container>

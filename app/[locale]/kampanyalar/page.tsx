@@ -1,11 +1,10 @@
 import { Tag } from "lucide-react";
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { PageHeader } from "@/components/layout/page-header";
 import { ClosingCta } from "@/components/sections/closing-cta";
 import { JsonLd } from "@/components/shared/json-ld";
-import { Button } from "@/components/ui/button";
+import { socialLinks } from "@/components/shared/social-icons";
 import { Container } from "@/components/ui/container";
 import { IconCircle } from "@/components/ui/icon-circle";
 import { isLocale } from "@/lib/i18n/config";
@@ -63,9 +62,25 @@ export default async function CampaignsPage({
             <div className="mx-auto flex max-w-[560px] flex-col items-center gap-5 rounded-md border border-line-light bg-paper-card p-10 text-center">
               <IconCircle icon={Tag} size={40} tone="light" />
               <p className="text-body text-fg-light-muted">{page.empty}</p>
-              <Button asChild variant="primary-dark" size="md">
-                <Link href={path(locale, "appointment")}>{page.emptyCta}</Link>
-              </Button>
+              {/* Randevu CTA'sı yerine sosyal medya kanalları. */}
+              <ul
+                className="flex items-center gap-1"
+                aria-label={page.emptySocial}
+              >
+                {socialLinks.map(({ key, Icon, href, label }) => (
+                  <li key={key}>
+                    <a
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={label}
+                      className="grid size-11 place-items-center text-fg-light-subtle transition-colors hover:text-fg-light"
+                    >
+                      <Icon className="size-4" />
+                    </a>
+                  </li>
+                ))}
+              </ul>
             </div>
           ) : (
             <ul className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">

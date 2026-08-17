@@ -152,8 +152,7 @@ export function SiteFooter({
         {/* ── Alt bar ─────────────────────────────────────── */}
         <div className="mt-12 flex flex-col justify-between gap-3 border-t border-line-dark py-5 text-[11px] text-fg-dark-subtle sm:flex-row">
           <p>
-            © {new Date().getFullYear()} {dict.brand.name} {dict.brand.tagline}.{" "}
-            {dict.footer.rights}
+            © {new Date().getFullYear()} {dict.brand.name}. {dict.footer.rights}
           </p>
           <ul className="flex flex-wrap items-center gap-x-4 gap-y-1">
             <li>

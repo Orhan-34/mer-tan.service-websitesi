@@ -11,7 +11,7 @@ import type { Dictionary } from "./tr";
 export const en: Dictionary = {
   brand: {
     name: "Koluman İstanbul",
-    tagline: "Mercedes-Benz Authorised Service",
+    tagline: "Mercedes-Benz Specialist Service",
     blurb:
       "Specialist service for electronic fault diagnosis and engine ECU repair on Mercedes-Benz vehicles.",
   },
@@ -483,6 +483,11 @@ export const en: Dictionary = {
       description:
         "Our team and technology for Mercedes-Benz electronic fault diagnosis and engine ECU repair.",
       lead: "We don't guess at faults — we measure them.",
+      gallery: {
+        workshop: "The Koluman İstanbul service workshop",
+        team: "Our technicians working on Mercedes-Benz systems",
+        equipment: "Measurement equipment we use for electronic fault diagnosis",
+      },
       sections: [
         {
           heading: "What we do differently",
@@ -663,7 +668,7 @@ export const en: Dictionary = {
 
   meta: {
     home: {
-      title: "Mercedes-Benz Authorised Service Istanbul | Koluman",
+      title: "Mercedes-Benz Specialist Service Istanbul | Koluman",
       description:
         "Specialist service for Mercedes-Benz engine ECU and electronic fault diagnosis. XENTRY diagnostics, coding and software updates. Book today.",
     },

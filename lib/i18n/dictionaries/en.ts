@@ -10,7 +10,7 @@ import type { Dictionary } from "./tr";
  */
 export const en: Dictionary = {
   brand: {
-    name: "Koluman İstanbul",
+    name: "Mer-tan Services",
     tagline: "Mercedes-Benz Specialist Service",
     blurb:
       "Specialist service for electronic fault diagnosis and engine ECU repair on Mercedes-Benz vehicles.",
@@ -39,12 +39,12 @@ export const en: Dictionary = {
     required: "required",
   },
 
-  hours: [
-    { days: "Monday – Friday", time: "08:30 – 18:30" },
-    { days: "Saturday", time: "09:00 – 16:00" },
-    { days: "Sunday", time: "Closed" },
-  ],
-  hoursShort: "Mon–Sat 08:30–18:30",
+  hoursBadge: {
+    openLabel: "Open 24/7",
+    openDays: "Monday – Saturday",
+    closedLabel: "Closed",
+    closedDays: "Sunday",
+  },
 
   nav: {
     home: "Home",
@@ -409,9 +409,7 @@ export const en: Dictionary = {
 
   closing: {
     title: "The right address for your car.",
-    text: "Describe the symptom and leave the rest to us. Book today or call us directly and let our technician guide you.",
-    mapCta: "Load map",
-    mapNote: "The map loads when you click it (for privacy and performance).",
+    text: "Describe the symptom and leave the rest to us. Call us directly and let our technician guide you.",
     mapAlt: "Map preview showing the service location",
     mapTitle: "Koluman İstanbul location map",
   },
@@ -419,7 +417,6 @@ export const en: Dictionary = {
   footer: {
     contactTitle: "Get in Touch",
     quickLinksTitle: "Quick Links",
-    mapPreview: "View location",
     rights: "All rights reserved.",
     legal: {
       privacy: "Privacy Policy",

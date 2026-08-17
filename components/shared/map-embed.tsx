@@ -1,17 +1,17 @@
-"use client";
-
-import { MapPin } from "lucide-react";
 import Image from "next/image";
-import * as React from "react";
 import type { Dictionary } from "@/lib/i18n/dictionaries";
+import { siteConfig } from "@/lib/site-config";
 
 /**
- * Facade deseni: ilk yüklemede yalnızca statik bir görsel gelir, gerçek iframe
- * kullanıcı tıklayınca yüklenir. Hem LCP/CLS hem de gizlilik açısından doğru
- * yaklaşım — Google'a onaysız istek gitmez.
+ * Harita sayfa açılışında doğrudan gömülür. `loading="lazy"` sayesinde iframe
+ * yalnızca görünüm alanına yaklaşınca istek atar; böylece ilk yükleme ve LCP
+ * etkilenmez.
  *
- * `NEXT_PUBLIC_GOOGLE_MAPS_EMBED_URL` tanımlı değilse harita yerine doğrudan
- * Google Haritalar bağlantısı gösterilir.
+ * ⚠️ Gizlilik notu: iframe göründüğü anda Google'a istek gider — çerez/KVKK
+ * metinlerinin bunu kapsadığından emin olun.
+ *
+ * `embedUrl` verilmezse (env ve site-config ikisi de boşsa) statik görsel
+ * gösterilir ve Google Haritalar'a bağlantı verilir.
  */
 export function MapEmbed({
   dict,
@@ -22,28 +22,19 @@ export function MapEmbed({
   embedUrl?: string;
   className?: string;
 }) {
-  const [loaded, setLoaded] = React.useState(false);
+  const wrapperClass =
+    className ??
+    "relative aspect-[16/10] overflow-hidden rounded-md border border-line-dark";
 
-  return (
-    <div
-      className={
-        className ??
-        "relative aspect-[16/10] overflow-hidden rounded-md border border-line-dark"
-      }
-    >
-      {loaded && embedUrl ? (
-        <iframe
-          src={embedUrl}
-          title={dict.closing.mapTitle}
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-          className="absolute inset-0 h-full w-full border-0"
-        />
-      ) : (
-        <button
-          type="button"
-          onClick={() => setLoaded(true)}
-          className="group absolute inset-0 h-full w-full"
+  if (!embedUrl) {
+    return (
+      <div className={wrapperClass}>
+        <a
+          href={siteConfig.address.mapsUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={dict.closing.mapTitle}
+          className="absolute inset-0"
         >
           <Image
             src="/images/map-static.svg"
@@ -52,14 +43,21 @@ export function MapEmbed({
             sizes="(max-width: 1024px) 100vw, 50vw"
             className="object-cover"
           />
-          <span className="absolute inset-0 grid place-items-center bg-ink/40 transition-colors group-hover:bg-ink/30">
-            <span className="inline-flex items-center gap-2 rounded-sm bg-white px-4 py-2 text-[13px] font-semibold text-ink">
-              <MapPin className="size-4" strokeWidth={1.5} aria-hidden="true" />
-              {dict.closing.mapCta}
-            </span>
-          </span>
-        </button>
-      )}
+        </a>
+      </div>
+    );
+  }
+
+  return (
+    <div className={wrapperClass}>
+      <iframe
+        src={embedUrl}
+        title={dict.closing.mapTitle}
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+        allowFullScreen
+        className="absolute inset-0 h-full w-full border-0"
+      />
     </div>
   );
 }

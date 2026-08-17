@@ -93,7 +93,7 @@ export default async function AboutPage({
       </section>
 
       <StatsBand dict={dict} locale={locale} />
-      <ClosingCta locale={locale} dict={dict} />
+      <ClosingCta dict={dict} />
 
       <JsonLd data={breadcrumbSchema(crumbs)} />
     </>

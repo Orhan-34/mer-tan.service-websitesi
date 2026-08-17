@@ -85,7 +85,7 @@ export default async function CampaignsPage({
         </Container>
       </section>
 
-      <ClosingCta locale={locale} dict={dict} />
+      <ClosingCta dict={dict} />
 
       <JsonLd data={breadcrumbSchema(crumbs)} />
     </>

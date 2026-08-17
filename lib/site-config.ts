@@ -9,32 +9,44 @@
  * verisiyle değiştirilmelidir.
  */
 export const siteConfig = {
-  name: "Koluman İstanbul",
+  name: "Mer-tan Services",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://kolumanistanbul.com.tr",
 
   contact: {
-    phone: "+902121234567",
-    phoneDisplay: "0212 123 45 67",
-    whatsapp: "+905321234567",
-    whatsappDisplay: "0532 123 45 67",
-    email: "info@kolumanistanbul.com.tr",
+    phone: "+905308173437",
+    phoneDisplay: "0530 817 34 37",
+    /** WhatsApp hattı telefonla aynı numara. */
+    whatsapp: "+905308173437",
+    whatsappDisplay: "0530 817 34 37",
+    email: "mertan.service@gmail.com",
   },
 
   address: {
-    street: "Huzur Oto Mah. Atatürk Bulvarı No: 123",
-    district: "Başakşehir",
-    city: "İstanbul",
-    postalCode: "34000",
+    street: "Muallimköy Mah. 1196/6. Sk.",
+    district: "Gebze",
+    city: "Kocaeli",
+    postalCode: "41400",
     country: "TR",
-    mapsUrl: "https://www.google.com/maps/search/?api=1&query=41.0,28.8",
-    directionsUrl: "https://www.google.com/maps/dir/?api=1&destination=41.0,28.8",
-    geo: { lat: 41.0, lng: 28.8 },
+    mapsUrl:
+      "https://www.google.com/maps/search/?api=1&query=40.8034961%2C29.4814614",
+    directionsUrl:
+      "https://www.google.com/maps/dir/?api=1&destination=40.8034961%2C29.4814614",
+    /** API anahtarı gerektirmeyen embed; `NEXT_PUBLIC_GOOGLE_MAPS_EMBED_URL` yoksa kullanılır. */
+    mapEmbedUrl:
+      "https://www.google.com/maps?q=40.8034961,29.4814614&z=17&output=embed",
+    geo: { lat: 40.8034961, lng: 29.4814614 },
   },
 
-  /** Schema.org `openingHoursSpecification` için makine okunur saatler. */
+  /**
+   * Schema.org `openingHoursSpecification` için makine okunur saatler.
+   * Pazartesi–Cumartesi 24 saat açık; Pazar listede yok, yani kapalı.
+   */
   openingHours: [
-    { days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], opens: "08:30", closes: "18:30" },
-    { days: ["Saturday"], opens: "09:00", closes: "16:00" },
+    {
+      days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      opens: "00:00",
+      closes: "23:59",
+    },
   ],
 
   social: {

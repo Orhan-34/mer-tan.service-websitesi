@@ -9,7 +9,7 @@ import { siteConfig } from "@/lib/site-config";
  */
 export const tr = {
   brand: {
-    name: "Koluman İstanbul",
+    name: "Mer-tan Services",
     tagline: "Mercedes-Benz Araçlarda Uzman Servis",
     blurb:
       "Mercedes-Benz araçlarda elektronik arıza tespiti ve motor beyni çözümlerinde uzman servis.",
@@ -38,12 +38,12 @@ export const tr = {
     required: "zorunlu",
   },
 
-  hours: [
-    { days: "Pazartesi – Cuma", time: "08:30 – 18:30" },
-    { days: "Cumartesi", time: "09:00 – 16:00" },
-    { days: "Pazar", time: "Kapalı" },
-  ],
-  hoursShort: "Pzt–Cmt 08:30–18:30",
+  hoursBadge: {
+    openLabel: "7/24 Açık",
+    openDays: "Pazartesi – Cumartesi",
+    closedLabel: "Kapalı",
+    closedDays: "Pazar",
+  },
 
   nav: {
     home: "Anasayfa",
@@ -409,9 +409,7 @@ export const tr = {
 
   closing: {
     title: "Aracınız için doğru adres.",
-    text: "Arıza belirtisini tarif edin, gerisini bize bırakın. Randevunuzu bugün oluşturun ya da doğrudan arayın; teknisyenimiz sizi yönlendirsin.",
-    mapCta: "Haritayı yükle",
-    mapNote: "Harita, tıkladığınızda yüklenir (gizlilik ve performans için).",
+    text: "Arıza belirtisini tarif edin, gerisini bize bırakın. Doğrudan arayın; teknisyenimiz sizi yönlendirsin.",
     mapAlt: "Servis konumunu gösteren harita önizlemesi",
     mapTitle: "Koluman İstanbul konum haritası",
   },
@@ -419,7 +417,6 @@ export const tr = {
   footer: {
     contactTitle: "Bize Ulaşın",
     quickLinksTitle: "Hızlı Linkler",
-    mapPreview: "Konumu gör",
     rights: "Tüm hakları saklıdır.",
     legal: {
       privacy: "Gizlilik Politikası",

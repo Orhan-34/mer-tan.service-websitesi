@@ -24,10 +24,12 @@ export function mainNav(locale: Locale, dict: Dictionary): NavLink[] {
   ];
 }
 
-/** Footer "Hızlı Linkler" kolonu. */
+/** Footer "Hızlı Linkler" kolonu — randevu linki yalnızca header'da duruyor. */
 export function footerNav(locale: Locale, dict: Dictionary): NavLink[] {
   return [
-    ...mainNav(locale, dict).slice(0, 4),
+    ...mainNav(locale, dict).filter(
+      (link) => link.key !== "appointment" && link.key !== "contact",
+    ),
     { key: "faq", label: dict.nav.faq, href: path(locale, "faq") },
     { key: "about", label: dict.nav.about, href: path(locale, "about") },
     { key: "contact", label: dict.nav.contact, href: path(locale, "contact") },

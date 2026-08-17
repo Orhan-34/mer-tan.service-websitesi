@@ -58,13 +58,6 @@ export const en: Dictionary = {
     footerLabel: "Footer menu",
   },
 
-  megaMenu: {
-    promoTitle: "Free Initial Assessment",
-    promoText:
-      "Your first evaluation and guidance at the appointment is free of charge.",
-    promoCta: "Book an appointment",
-  },
-
   hero: {
     title: "Your Mercedes-Benz is in expert hands.",
     ctaPrimary: "Book a Service Appointment",

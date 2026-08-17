@@ -57,12 +57,6 @@ export const tr = {
     footerLabel: "Alt menü",
   },
 
-  megaMenu: {
-    promoTitle: "Ücretsiz Ön Arıza Tespiti",
-    promoText: "Randevunuzda ilk değerlendirme ve yönlendirme ücretsizdir.",
-    promoCta: "Randevu oluştur",
-  },
-
   hero: {
     title: "Mercedes-Benz'iniz emin ellerde.",
     ctaPrimary: "Servis Randevusu Al",

@@ -1,18 +1,12 @@
-import { MapPin, Phone, CalendarCheck } from "lucide-react";
-import Link from "next/link";
-import type { Locale } from "@/lib/i18n/config";
+import { MapPin, Phone } from "lucide-react";
 import type { Dictionary } from "@/lib/i18n/dictionaries";
-import { path } from "@/lib/i18n/routes";
 import { siteConfig } from "@/lib/site-config";
 
-/** Mobil dönüşüm çubuğu — plan §5.2. Masaüstünde gizlenir. */
-export function MobileActionBar({
-  locale,
-  dict,
-}: {
-  locale: Locale;
-  dict: Dictionary;
-}) {
+/**
+ * Mobil dönüşüm çubuğu — plan §5.2. Masaüstünde gizlenir.
+ * İki aksiyon (ara / yol tarifi) `flex-1` ile şeridi eşit paylaşır.
+ */
+export function MobileActionBar({ dict }: { dict: Dictionary }) {
   const itemClasses =
     "flex flex-1 flex-col items-center justify-center gap-1 py-2.5 text-[11px] font-medium text-white transition-colors hover:bg-white/5";
 
@@ -23,11 +17,6 @@ export function MobileActionBar({
           <Phone className="size-[18px]" strokeWidth={1.5} aria-hidden="true" />
           {dict.common.callNow}
         </a>
-
-        <Link href={path(locale, "appointment")} className={itemClasses}>
-          <CalendarCheck className="size-[18px]" strokeWidth={1.5} aria-hidden="true" />
-          {dict.common.bookAppointment}
-        </Link>
 
         <a
           href={siteConfig.address.directionsUrl}

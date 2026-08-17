@@ -25,7 +25,7 @@ export type RouteKey = keyof typeof routeSegments;
 /**
  * Dile göre tam yol üretir.
  * `path("tr", "services")` → `/tr/hizmetler`
- * `path("en", "services", "xentry-diagnostics")` → `/en/services/xentry-diagnostics`
+ * `path("en", "services", "adblue-systems")` → `/en/services/adblue-systems`
  */
 export function path(locale: Locale, key: RouteKey, slug?: string): string {
   const segment = routeSegments[key][locale];

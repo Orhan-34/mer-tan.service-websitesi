@@ -91,138 +91,106 @@ export const tr = {
     detailCtaText:
       "Belirtiyi tarif edin, teknisyenimiz uygun zamanı planlasın. Onayınız olmadan hiçbir işlem yapılmaz.",
     items: {
-      ecu: {
-        title: "Motor Beyni (ECU) Arıza Tespit ve Çözüm",
+      adblue: {
+        title: "AdBlue Sistemleri",
         excerpt:
-          "Arızalı motor kontrol ünitelerinde tespit, onarım ve yeniden programlama.",
+          "AdBlue deposu, pompa, ısıtıcı hattı ve enjektörde arıza tespiti ve onarım.",
         intro: [
-          "Motor kontrol ünitesi (ECU), aracınızın beynidir; yakıt, ateşleme ve emisyon sistemlerini milisaniyeler içinde yönetir. Nem, voltaj dalgalanması, hatalı müdahale veya yazılım bozulması sonucu oluşan ECU arızaları çoğu zaman “çalışmıyor” olarak değil, düzensiz rölanti, güç kaybı, arıza lambası ve haberleşme hatası olarak kendini gösterir.",
-          "Koluman İstanbul'da ECU arızalarında önce doğru teşhis yapılır: ünitenin gerçekten arızalı olup olmadığı, sorunun besleme hattından mı yoksa yazılımdan mı kaynaklandığı ölçümle belirlenir. Gereksiz ünite değişimi önerilmez.",
+          "AdBlue sistemi, dizel araçların emisyon standartlarını karşılamasını sağlayan hassas bir sıvı enjeksiyon yapısıdır. Kalitesiz AdBlue kullanımı, kristalleşme, pompa arızası veya nozul tıkanıklığı; göstergede kilometre geri sayımı, motor torkunun kısıtlanması ve aracın yeniden çalışmaması gibi kritik durumlara yol açar.",
+          "Servisimizde AdBlue deposu, pompa basıncı, ısıtıcı hatları ve enjektör yapısı detaylı olarak analiz edilir. Yazılımsal ve mekanik tıkanıklıklar profesyonel ekipmanlarla giderilerek sistem ilk günkü çalışma değerlerine getirilir.",
         ],
         scope: [
-          "ECU okuma ve arıza kaydı analizi",
-          "Devre ve besleme ölçümleri",
-          "Kart seviyesinde onarım",
-          "Yeniden programlama (flash)",
-          "Araca kodlama ve adaptasyon",
-          "İşlem sonrası yol testi",
+          "AdBlue deposu ve seviye sensörü kontrolü",
+          "Pompa basıncı ölçümü",
+          "Isıtıcı hatlarının kontrolü",
+          "Enjektör ve nozul tıkanıklığı temizliği",
+          "Kristalleşme kaynaklı arızaların giderilmesi",
+          "Yazılımsal arıza ve geri sayım kontrolü",
         ],
       },
-      xentry: {
-        title: "Mercedes-Benz XENTRY ile Profesyonel Diagnostik",
+      engine: {
+        title: "Motor Sistem Arızaları",
         excerpt:
-          "Orijinal XENTRY sistemiyle tüm kontrol ünitelerinin detaylı taraması.",
+          "Güç kaybı, yüksek yakıt tüketimi ve sarsıntılı çalışmada kaynağa inen teşhis.",
         intro: [
-          "XENTRY, Mercedes-Benz'in kendi geliştirdiği resmî teşhis sistemidir. Piyasadaki genel amaçlı cihazların erişemediği kontrol ünitelerini okur, üreticinin tanımladığı test adımlarını uygular ve arıza kodunun ardındaki gerçek nedeni gösterir.",
-          "Tüm kontrol ünitelerinin tam taraması, canlı veri analizi ve yönlendirilmiş test (guided test) ile arızayı tahmin etmeden buluyoruz.",
+          "Motor, aracınızın kalbidir; performans, yakıt tüketimi ve sürüş güvenliğini doğrudan belirler. Yakıt sistemi, sensörler veya mekanik bileşenlerden kaynaklanan arızalar; çekiş düşüklüğü, yüksek yakıt tüketimi, sarsıntılı çalışma ve egzozdan siyah/mavi duman çıkmasıyla kendini gösterir.",
+          "Servisimizde motor arızalarında ezbere parça değişimi yapılmaz. Bilgisayarlı diyagnostik testler, kompresyon ve sensör ölçümleriyle sorunun kaynağı (enjektör, turbo, sensörler vb.) net olarak tespit edilir; gereksiz masraf çıkarılmadan doğrudan çözüme ulaşılır.",
         ],
         scope: [
-          "Tüm ECU'ların tam taraması",
-          "Canlı veri ve aktüatör testi",
-          "Yönlendirilmiş arıza takibi",
-          "SCN kodlama",
-          "Detaylı yazılı rapor",
-        ],
-      },
-      electronics: {
-        title: "Elektronik Sistem Arıza Tespiti",
-        excerpt:
-          "Kablo tesisatı, sensör ve haberleşme hatlarında kalıcı çözüm.",
-        intro: [
-          "Modern bir Mercedes-Benz'de 70'in üzerinde kontrol ünitesi CAN ve LIN hatları üzerinden haberleşir. Tek bir kablo teması, korozyona uğramış bir soket ya da zayıf bir kütle bağlantısı, birbiriyle ilgisiz görünen onlarca arıza kodu üretebilir.",
-          "Bu tür arızalarda parça değiştirerek ilerlemek hem pahalı hem sonuçsuzdur. Osiloskop ve devre ölçümleriyle hattı fiziksel olarak takip ediyor, arızayı kaynağında çözüyoruz.",
-        ],
-        scope: [
-          "CAN/LIN hat analizi",
-          "Kablo tesisatı ve soket kontrolü",
-          "Sensör ve aktüatör ölçümü",
-          "Parazitik akım (kaçak akım) tespiti",
-          "Aydınlatma ve konfor sistemleri",
-        ],
-      },
-      coding: {
-        title: "Kodlama, Yazılım Güncelleme ve Adaptasyon",
-        excerpt:
-          "Parça değişimi sonrası kodlama, güncelleme ve adaptasyon işlemleri.",
-        intro: [
-          "Mercedes-Benz araçlarda parça değişimi tek başına yeterli değildir; yeni parçanın araca tanıtılması, VIN'e göre kodlanması ve gerekiyorsa yazılımının güncellenmesi gerekir. Bu adım atlandığında parça çalışmaz veya araç arıza lambası yakar.",
-          "Orijinal yazılım erişimiyle kodlama, adaptasyon ve güncelleme işlemlerini üretici prosedürüne uygun yapıyoruz.",
-        ],
-        scope: [
-          "SCN kodlama",
-          "Yazılım güncelleme",
-          "Parça sonrası adaptasyon",
-          "Anahtar ve immobilizer işlemleri",
-          "Donanım (opsiyon) aktivasyonu",
-          "Enjektör / şanzıman adaptasyonu",
-        ],
-      },
-      maintenance: {
-        title: "Periyodik Bakım",
-        excerpt:
-          "Üretici bakım planına uygun, kayıt altına alınan servis bakımı.",
-        intro: [
-          "Periyodik bakım yalnızca yağ ve filtre değişimi değildir. Mercedes-Benz'in ASSYST bakım planı, aracın kullanım profiline göre değişen bir işlem listesi tanımlar; bu liste eksik uygulandığında hem garanti hem araç ömrü etkilenir.",
-          "Bakımlarınızı üretici prosedürüne uygun yapıyor, tüm işlemleri belgeliyor ve dijital servis kaydına işliyoruz.",
-        ],
-        scope: [
-          "ASSYST bakım planına uygun işlem",
-          "Motor yağı ve filtre değişimi",
-          "Fren, süspansiyon ve lastik kontrolü",
-          "Akü ve şarj sistemi testi",
-          "Dijital servis kaydı güncelleme",
-          "Bakım sonrası genel kontrol raporu",
+          "Bilgisayarlı diyagnostik test",
+          "Kompresyon ölçümü",
+          "Enjektör ve yakıt sistemi kontrolü",
+          "Turbo ve hava yolu kontrolü",
+          "Sensör ölçümleri",
+          "Onarım sonrası yol testi",
         ],
       },
       transmission: {
-        title: "Şanzıman Arıza Tespiti",
+        title: "Şanzıman Arızaları",
         excerpt:
-          "7G/9G-TRONIC şanzımanlarda elektronik teşhis ve adaptasyon.",
+          "Vuruntu, kaydırma ve geç dolma şikâyetlerinde nokta atışı onarım.",
         intro: [
-          "Otomatik şanzımanlarda hissedilen sertlik, gecikmeli vites geçişi veya acil durum (limp) moduna geçiş her zaman mekanik arıza anlamına gelmez. Çoğu durumda sorun; valf gövdesi elektroniği, hız sensörleri veya adaptasyon değerlerindeki bozulmadır.",
-          "Şanzıman kontrol ünitesinin canlı verilerini okuyarak mekanik müdahale gerekip gerekmediğini önce elektronik tarafta netleştiriyoruz.",
+          "Şanzıman, motor gücünü tekerleklere aktaran en hassas ve karmaşık sistemdir. Yağ kalitesinin bozulması, dişli aşınması veya hidrolik/elektronik ünite sorunları; vites geçişlerinde vuruntu, kaydırma, geç dolma veya aracın koruma moduna geçmesiyle belirti verir.",
+          "Şanzıman teşhisinde öncelikle arıza kodları okunur ve hidrolik basınç testleri gerçekleştirilir. Aşınma derecesi ve elektronik beyin tepkileri incelenerek komple değişim yerine nokta atışı onarım veya revizyon hedeflenir.",
         ],
         scope: [
-          "Şanzıman kontrol ünitesi taraması",
-          "Canlı veri ve basınç değerleri analizi",
-          "Valf gövdesi elektroniği kontrolü",
-          "Adaptasyon sıfırlama ve yeniden öğretme",
+          "Arıza kodu okuma ve analiz",
+          "Hidrolik basınç testleri",
+          "Elektronik kontrol ünitesi kontrolü",
+          "Aşınma derecesinin belirlenmesi",
+          "Nokta atışı onarım ve revizyon",
           "Yağ ve filtre değişimi",
-          "Yol testi ile doğrulama",
+        ],
+      },
+      brakes: {
+        title: "EBS & ABS Fren Sistemleri",
+        excerpt:
+          "Sensör, valf ve modülatör arızalarında güvenliği riske atmayan teşhis.",
+        intro: [
+          "ABS ve EBS sistemleri, ani frenlemelerde tekerleklerin kilitlenmesini önleyerek aracın yön hakimiyetini korur. Sensör kirlenmesi, kablo tesisatı kopuklukları veya valf/modülatör arızaları; fren pedalında sertleşme, gösterge paneli ikazları ve fren mesafesinin uzamasıyla ortaya çıkar.",
+          "Fren sistemlerinizde tekerlek hız sensörleri, basınç modülatörleri ve beyin haberleşmesi osiloskop ve özel test cihazlarıyla kontrol edilir. Sürüş güvenliği riske atılmadan sadece arızalı hat veya modül tespit edilip giderilir.",
+        ],
+        scope: [
+          "Tekerlek hız sensörü kontrolü",
+          "Basınç modülatörü testi",
+          "Kablo tesisatı ve soket kontrolü",
+          "Osiloskop ile sinyal analizi",
+          "Fren beyni haberleşme kontrolü",
+          "Gösterge ikazlarının giderilmesi",
         ],
       },
       climate: {
-        title: "Klima ve Konfor Sistemleri",
+        title: "Araç Klima Sistemleri",
         excerpt:
-          "Klima, koltuk, cam ve konfor elektroniğinde arıza tespiti.",
+          "UV kaçak arama, gaz dolumu, kompresör testi ve sistem hijyeni.",
         intro: [
-          "Klima performans kaybı çoğu zaman gaz eksikliğinden değil; basınç sensörü, kompresör kontrol valfi ya da klima kontrol ünitesi kaynaklıdır. Aynı şekilde koltuk, cam ve kapı modüllerindeki arızalar da genellikle elektronik kökenlidir.",
-          "Konfor sistemlerinde önce ölçüm yapıyor, gereksiz gaz ve parça değişiminin önüne geçiyoruz.",
+          "Araç kliması yalnızca yaz konforu değil, kışın cam buğusunun hızlı çözülmesi ve kabin hava kalitesi için de hayati önem taşır. Gaz kaçağı, kompresör kilitlenmesi veya kabin filtresi tıkanıklığı; yetersiz soğutma/ısıtma, kötü koku ve klimayı açınca motordan gelen anormal seslerle kendini belli eder.",
+          "Klima sisteminde UV kaçak arama gazı ve hassas basınç testleriyle sızıntı noktaları nokta atışı tespit edilir. Gaz dolumu, kompresör testi ve bakteriyel sistem hijyeni sağlanarak klimanız maksimum verimle çalışır hale getirilir.",
         ],
         scope: [
-          "Klima devresi basınç ve sızdırmazlık testi",
-          "Kompresör ve kontrol valfi kontrolü",
-          "Klima kontrol ünitesi taraması",
-          "Koltuk, cam ve kapı modülü arızaları",
-          "Sıcaklık ve hava kalitesi sensörleri",
-          "Gaz şarjı ve dezenfeksiyon",
+          "UV kaçak arama gazı ile sızıntı tespiti",
+          "Hassas basınç testleri",
+          "Kompresör testi ve kontrolü",
+          "Gaz boşaltma ve dolum",
+          "Kabin filtresi değişimi",
+          "Bakteriyel sistem hijyeni",
         ],
       },
-      inspection: {
-        title: "Araç Ekspertiz",
+      egrdpf: {
+        title: "EGR & DPF Arızaları",
         excerpt:
-          "İkinci el alım öncesi elektronik ve mekanik durum raporu.",
+          "Kurum tıkanıklığında rejenerasyon, profesyonel temizlik ve kök neden çözümü.",
         intro: [
-          "İkinci el bir Mercedes-Benz'in gerçek durumu göz muayenesiyle anlaşılmaz. Silinmiş arıza kayıtları, geçmişteki hava yastığı açılması, kilometre tutarsızlığı ve onarılmış hasarlar ancak kontrol ünitelerinin okunmasıyla ortaya çıkar.",
-          "Alım öncesi ekspertizde aracın elektronik geçmişini ve mekanik durumunu yazılı raporla teslim ediyoruz.",
+          "EGR ve Dizel Partikül Filtresi (DPF), egzoz gazındaki zararlı partikülleri süzerek çevreye salınımı engeller. Şehir içi kısa mesafe kullanım ve uygun olmayan yağ/yakıt seçimi; kurum birikmesine, tıkanıklığa, motor arıza lambasının yanmasına ve belirgin güç kaybına neden olur.",
+          "Tıkalı DPF ve EGR sistemlerinde değişim öncesinde fiziki kurum oranı ölçülür, sensör değerleri doğrulanır. Rejenerasyon, profesyonel temizlik veya parça onarımı ile tıkanıklığa sebep olan asıl faktör (enjektör veya sensör hatası) çözülerek arızanın tekrarlaması engellenir.",
         ],
         scope: [
-          "Tüm kontrol ünitelerinin arıza kaydı geçmişi",
-          "Kilometre ve servis kaydı tutarlılık kontrolü",
-          "Hava yastığı ve güvenlik sistemi geçmişi",
-          "Motor ve şanzıman canlı veri analizi",
-          "Kaporta ve boya kalınlık ölçümü",
-          "Fotoğraflı yazılı ekspertiz raporu",
+          "Fiziki kurum oranı ölçümü",
+          "Diferansiyel basınç ve sıcaklık sensörü doğrulama",
+          "Zorunlu rejenerasyon",
+          "Profesyonel DPF ve EGR temizliği",
+          "EGR valfi onarımı veya değişimi",
+          "Tıkanıklığın kök nedeninin giderilmesi",
         ],
       },
     },
@@ -294,11 +262,12 @@ export const tr = {
     errorTitle: "Talebiniz gönderilemedi.",
     errorFallback: "Dilerseniz doğrudan bizi arayabilirsiniz:",
     serviceOptions: {
-      ecu: "Motor Beyni (ECU) Arıza Tespiti",
-      xentry: "XENTRY Diagnostik",
-      electronics: "Elektronik Sistem Arıza Tespiti",
-      coding: "Kodlama / Yazılım Güncelleme",
-      maintenance: "Periyodik Bakım",
+      adblue: "AdBlue Sistemleri",
+      engine: "Motor Sistem Arızaları",
+      transmission: "Şanzıman Arızaları",
+      brakes: "EBS & ABS Fren Sistemleri",
+      climate: "Araç Klima Sistemleri",
+      egrdpf: "EGR & DPF Arızaları",
       other: "Diğer / Emin Değilim",
     },
     errors: {
@@ -392,27 +361,43 @@ export const tr = {
   faq: {
     title: "Sıkça Sorulan Sorular",
     description:
-      "Garanti, diagnostik süresi, orijinal parça ve maliyet hakkında en çok sorulan soruların yanıtları.",
+      "AdBlue, DPF, şanzıman, fren ve klima arızaları ile garanti, orijinal parça ve maliyet hakkında en çok sorulan soruların yanıtları.",
     items: {
       warranty: {
         question: "Yetkili servis dışında yaptırdığım işlem garantimi etkiler mi?",
         answer:
           "Türkiye'de yürürlükteki mevzuat gereği, aracınızın bakımını yetkili servis dışında yaptırmanız garantinizi kendiliğinden geçersiz kılmaz; ancak yapılan işlemin doğrudan neden olduğu arızalar garanti kapsamı dışında kalabilir. Bu nedenle orijinal parça kullanımı, üretici prosedürüne uygun işlem ve belgelendirme bizim için standarttır. Tüm işlemleriniz faturalandırılır ve kayıt altına alınır.",
       },
-      "ecu-symptoms": {
-        question: "Motor beyni (ECU) arızası nasıl anlaşılır?",
+      "adblue-warning": {
+        question:
+          "Göstergede AdBlue uyarısı ve kilometre geri sayımı çıktı, aracım çalışmayı durdurur mu?",
         answer:
-          "En sık görülen belirtiler: aracın zor çalışması veya hiç çalışmaması, rölantide düzensizlik, ani güç kaybı, arıza (motor) lambasının sürekli yanması, diagnostik cihazın üniteyle haberleşememesi ve yakıt tüketiminde açıklanamayan artış. Bu belirtilerin birçoğu ECU dışındaki nedenlerden de kaynaklanabilir; bu yüzden ünite değişimi önerilmeden önce mutlaka ölçüm yapılmalıdır.",
+          "Geri sayım, sistemin arızayı tespit ettiği andan itibaren size tanınan süredir. Bu süre sıfırlandığında araç önce motor torkunu kısıtlar, ardından kontak kapatıldığında yeniden çalışmayabilir. Uyarı yalnızca AdBlue seviyesinin düşmesinden değil; kalitesiz sıvı kaynaklı kristalleşme, pompa arızası veya nozul tıkanıklığından da kaynaklanabilir. Bu yüzden depoyu doldurmak çoğu zaman tek başına yeterli olmaz — geri sayım devam ediyorsa sistemin analiz edilmesi gerekir. Aracınızı kilitlenmeden önce getirirseniz işlem hem kısa hem düşük maliyetli olur.",
       },
-      "xentry-duration": {
-        question: "XENTRY diagnostik ne kadar sürer, ücretli mi?",
+      "dpf-cleaning": {
+        question: "Tıkalı DPF temizlenebilir mi, yoksa değiştirmek zorunda mıyım?",
         answer:
-          "Standart tam tarama ve rapor işlemi ortalama 45–60 dakika sürer. Arızanın karmaşıklığına göre yönlendirilmiş test süresi uzayabilir. Diagnostik işlemi ücretlidir; onarım tarafımızda yapıldığında bu ücret işlem bedelinden mahsup edilir. Güncel ücret için lütfen bizi arayın.",
+          "Çoğu durumda değişim gerekmez. Değişim önerilmeden önce filtredeki fiziki kurum oranını ölçüyor, diferansiyel basınç ve sıcaklık sensörlerinin doğru değer verdiğini doğruluyoruz. Tıkanıklığın derecesine göre zorunlu rejenerasyon veya profesyonel temizlik uygulanıyor. Asıl önemli olan, tıkanıklığa neden olan kök faktörün (arızalı enjektör, hatalı sensör, uygun olmayan yağ/yakıt ya da sürekli kısa mesafe kullanım) çözülmesidir; bu yapılmazsa yeni filtre de kısa sürede tıkanır.",
+      },
+      "transmission-overhaul": {
+        question: "Şanzıman arızasında komple değişim şart mı?",
+        answer:
+          "Hayır. Vites geçişlerinde vuruntu, kaydırma, geç dolma veya koruma moduna geçiş her zaman şanzımanın komple yenilenmesini gerektirmez. Önce arıza kodlarını okuyor, hidrolik basınç testlerini yapıyor ve elektronik kontrol ünitesinin tepkilerini inceliyoruz. Sorun çoğu zaman yağ kalitesi, hidrolik veya elektronik tarafta olur; bu durumlarda komple değişim yerine nokta atışı onarım ya da revizyon uygulanır. Mekanik aşınma ileri seviyedeyse bunu ölçüm sonuçlarıyla birlikte açıkça bildiririz.",
+      },
+      "abs-warning": {
+        question: "ABS/EBS lambası yanıyor, aracımı kullanmaya devam edebilir miyim?",
+        answer:
+          "Fren sisteminiz çalışmaya devam eder, ancak ABS/EBS devre dışıyken ani frenlemede tekerlekler kilitlenebilir ve yön hakimiyetinizi kaybedebilirsiniz; fren mesafesi de uzar. Bu nedenle uyarı yanan bir araçla uzun yola çıkılmasını önermiyoruz. Arızanın kaynağı çoğu zaman kirlenmiş bir tekerlek hız sensörü ya da kopmuş bir kablo tesisatıdır; osiloskop ve özel test cihazlarıyla sadece arızalı hat veya modül tespit edilip giderilir.",
+      },
+      "climate-gas": {
+        question: "Klimam soğutmuyor, sadece gaz doldurmak yeterli mi?",
+        answer:
+          "Gaz eksilmesi kendiliğinden olmaz; sistem kapalı devredir, gaz azalıyorsa bir yerde kaçak vardır. Kaçak bulunmadan yapılan dolum kısa sürede boşa gider. Biz önce UV kaçak arama gazı ve hassas basınç testleriyle sızıntı noktasını tespit ediyor, ardından dolumu yapıyoruz. Yetersiz soğutmanın nedeni her zaman gaz da değildir — kompresör kilitlenmesi veya tıkalı kabin filtresi de aynı şikâyeti yaratır; kötü koku varsa sistemin bakteriyel hijyeni de gerekir.",
       },
       "walk-in": {
         question: "Randevusuz gelebilir miyim?",
         answer:
-          "Gelebilirsiniz, ancak yoğunluğa bağlı olarak bekleme süresi oluşabilir. Elektronik arıza tespiti cihaz ve teknisyen planlaması gerektirdiği için randevulu gelmeniz hem işlem süresini kısaltır hem de aynı gün teslim ihtimalini artırır.",
+          "Gelebilirsiniz, ancak yoğunluğa bağlı olarak bekleme süresi oluşabilir. Arıza tespiti cihaz ve teknisyen planlaması gerektirdiği için randevulu gelmeniz hem işlem süresini kısaltır hem de aynı gün teslim ihtimalini artırır.",
       },
       "genuine-parts": {
         question: "Orijinal parça kullanıyor musunuz?",
@@ -471,7 +456,7 @@ export const tr = {
     services: {
       title: "Hizmetlerimiz",
       description:
-        "Mercedes-Benz araçlarda motor beyni, diagnostik, elektronik arıza tespiti ve kodlama hizmetlerimizin tamamı.",
+        "AdBlue, motor, şanzıman, EBS & ABS fren, klima ve EGR & DPF sistemlerinde arıza tespiti ve onarım hizmetlerimizin tamamı.",
     },
     appointment: {
       title: "Servis Randevusu Oluşturun",
@@ -540,7 +525,7 @@ export const tr = {
     faq: {
       title: "Sıkça Sorulan Sorular",
       description:
-        "Garanti, diagnostik süresi, orijinal parça ve maliyet hakkında en çok sorulan soruların yanıtları.",
+        "AdBlue, DPF, şanzıman, fren ve klima arızaları ile garanti, orijinal parça ve maliyet hakkında en çok sorulan soruların yanıtları.",
       stillQuestions: "Sorunuzun cevabını bulamadınız mı?",
       stillQuestionsCta: "Bize ulaşın",
     },
@@ -685,7 +670,7 @@ export const tr = {
     services: {
       title: "Mercedes-Benz Servis Hizmetleri | Koluman İstanbul",
       description:
-        "ECU onarımı, XENTRY diagnostik, elektronik arıza tespiti, kodlama ve yazılım güncelleme. Tüm Mercedes-Benz servis hizmetlerimiz.",
+        "AdBlue, motor, şanzıman, EBS & ABS fren, klima ve EGR & DPF arıza tespiti ve onarımı. Tüm Mercedes-Benz servis hizmetlerimiz.",
     },
     appointment: {
       title: "Servis Randevusu Oluştur | Koluman İstanbul",
@@ -710,7 +695,7 @@ export const tr = {
     faq: {
       title: "Sıkça Sorulan Sorular | Mercedes-Benz Servis",
       description:
-        "Garanti, diagnostik süresi, orijinal parça ve maliyet hakkında en çok sorulan soruların yanıtları.",
+        "AdBlue, DPF, şanzıman, fren ve klima arızaları ile garanti, orijinal parça ve maliyet hakkında en çok sorulan soruların yanıtları.",
     },
     privacy: {
       title: "Gizlilik Politikası | Koluman İstanbul",

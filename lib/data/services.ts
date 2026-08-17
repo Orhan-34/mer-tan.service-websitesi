@@ -1,25 +1,21 @@
 import {
-  BadgeCheck,
-  CircuitBoard,
-  Code2,
-  Cpu,
-  MonitorCheck,
+  Disc3,
+  Droplets,
+  Filter,
+  Gauge,
   Settings2,
   Snowflake,
-  Wrench,
   type LucideIcon,
 } from "lucide-react";
 import type { Locale } from "@/lib/i18n/config";
 
 export const serviceIds = [
-  "ecu",
-  "xentry",
-  "electronics",
-  "coding",
-  "maintenance",
+  "adblue",
+  "engine",
   "transmission",
+  "brakes",
   "climate",
-  "inspection",
+  "egrdpf",
 ] as const;
 
 export type ServiceId = (typeof serviceIds)[number];
@@ -37,53 +33,41 @@ type ServiceMeta = {
  * `lib/i18n/dictionaries/*` içinde, aynı `ServiceId` anahtarlarıyla tutulur.
  */
 export const serviceMeta: Record<ServiceId, ServiceMeta> = {
-  ecu: {
-    icon: Cpu,
-    image: "/images/services/ecu.svg",
+  adblue: {
+    icon: Droplets,
+    image: "/images/services/adblue.webp",
     featured: true,
-    slug: { tr: "motor-beyni-ecu-ariza-tespiti", en: "ecu-fault-diagnosis" },
+    slug: { tr: "adblue-sistemleri", en: "adblue-systems" },
   },
-  xentry: {
-    icon: MonitorCheck,
-    image: "/images/services/xentry.svg",
+  engine: {
+    icon: Gauge,
+    image: "/images/services/motor.webp",
     featured: true,
-    slug: { tr: "xentry-diagnostik", en: "xentry-diagnostics" },
-  },
-  electronics: {
-    icon: CircuitBoard,
-    image: "/images/services/electronics.svg",
-    featured: true,
-    slug: { tr: "elektronik-sistem-ariza-tespiti", en: "electronic-system-diagnosis" },
-  },
-  coding: {
-    icon: Code2,
-    image: "/images/services/coding.svg",
-    featured: true,
-    slug: { tr: "kodlama-yazilim-guncelleme", en: "coding-software-updates" },
-  },
-  maintenance: {
-    icon: Wrench,
-    image: "/images/services/maintenance.svg",
-    featured: false,
-    slug: { tr: "periyodik-bakim", en: "scheduled-maintenance" },
+    slug: { tr: "motor-sistem-arizalari", en: "engine-system-faults" },
   },
   transmission: {
     icon: Settings2,
-    image: "/images/services/transmission.svg",
-    featured: false,
-    slug: { tr: "sanziman-ariza-tespiti", en: "transmission-diagnosis" },
+    image: "/images/services/sanziman.webp",
+    featured: true,
+    slug: { tr: "sanziman-arizalari", en: "transmission-faults" },
+  },
+  brakes: {
+    icon: Disc3,
+    image: "/images/services/ebs-abs.webp",
+    featured: true,
+    slug: { tr: "ebs-abs-fren-sistemleri", en: "ebs-abs-brake-systems" },
   },
   climate: {
     icon: Snowflake,
-    image: "/images/services/climate.svg",
+    image: "/images/services/klima.webp",
     featured: false,
-    slug: { tr: "klima-ve-konfor-sistemleri", en: "climate-and-comfort-systems" },
+    slug: { tr: "arac-klima-sistemleri", en: "vehicle-air-conditioning" },
   },
-  inspection: {
-    icon: BadgeCheck,
-    image: "/images/services/inspection.svg",
+  egrdpf: {
+    icon: Filter,
+    image: "/images/services/egr-dpf.webp",
     featured: false,
-    slug: { tr: "arac-ekspertiz", en: "vehicle-inspection" },
+    slug: { tr: "egr-dpf-arizalari", en: "egr-dpf-faults" },
   },
 };
 

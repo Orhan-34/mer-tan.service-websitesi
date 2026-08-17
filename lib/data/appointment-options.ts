@@ -1,10 +1,11 @@
 /** Formdaki hizmet seçenekleri. Etiketler sözlükten (`form.serviceOptions`) gelir. */
 export const serviceOptionValues = [
-  "ecu",
-  "xentry",
-  "electronics",
-  "coding",
-  "maintenance",
+  "adblue",
+  "engine",
+  "transmission",
+  "brakes",
+  "climate",
+  "egrdpf",
   "other",
 ] as const;
 

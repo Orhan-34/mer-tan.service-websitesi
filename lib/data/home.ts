@@ -80,8 +80,11 @@ export const processIcons: Record<ProcessStepId, LucideIcon> = {
 
 export const faqIds = [
   "warranty",
-  "ecu-symptoms",
-  "xentry-duration",
+  "adblue-warning",
+  "dpf-cleaning",
+  "transmission-overhaul",
+  "abs-warning",
+  "climate-gas",
   "walk-in",
   "genuine-parts",
   "cost-estimate",

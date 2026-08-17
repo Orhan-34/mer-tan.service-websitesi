@@ -93,138 +93,106 @@ export const en: Dictionary = {
     detailCtaText:
       "Describe the symptom and our technician will plan a suitable slot. Nothing is carried out without your approval.",
     items: {
-      ecu: {
-        title: "Engine ECU Fault Diagnosis and Repair",
+      adblue: {
+        title: "AdBlue Systems",
         excerpt:
-          "Diagnosis, repair and reprogramming of faulty engine control units.",
+          "Diagnosis and repair of the AdBlue tank, pump, heater lines and injector.",
         intro: [
-          "The engine control unit (ECU) is your car's brain, managing fuelling, ignition and emissions within milliseconds. ECU faults caused by moisture, voltage spikes, incorrect intervention or corrupted software rarely present as a dead unit — they usually show up as rough idling, power loss, a permanent engine warning light or a communication error.",
-          "At Koluman İstanbul, ECU work always starts with correct diagnosis: we measure whether the unit is genuinely faulty and whether the problem originates in the supply lines or in the software. We never recommend replacing a unit unnecessarily.",
+          "The AdBlue system is a precision fluid injection setup that keeps diesel vehicles within emissions limits. Poor-quality AdBlue, crystallisation, a failed pump or a blocked nozzle leads to critical situations: a mileage countdown in the instrument cluster, restricted engine torque and a vehicle that will not restart.",
+          "In our workshop the AdBlue tank, pump pressure, heater lines and injector assembly are analysed in detail. Software and mechanical blockages are cleared with professional equipment, returning the system to its original operating values.",
         ],
         scope: [
-          "ECU readout and fault memory analysis",
-          "Circuit and power supply measurements",
-          "Board-level repair",
-          "Reprogramming (flashing)",
-          "Vehicle coding and adaptation",
+          "AdBlue tank and level sensor inspection",
+          "Pump pressure measurement",
+          "Heater line inspection",
+          "Injector and nozzle blockage cleaning",
+          "Rectification of crystallisation faults",
+          "Software fault and countdown check",
+        ],
+      },
+      engine: {
+        title: "Engine System Faults",
+        excerpt:
+          "Root-cause diagnosis for power loss, high fuel consumption and rough running.",
+        intro: [
+          "The engine is the heart of your vehicle; it directly determines performance, fuel consumption and driving safety. Faults originating in the fuel system, the sensors or mechanical components show up as poor pulling power, high fuel consumption, rough running and black or blue smoke from the exhaust.",
+          "We never replace engine parts on guesswork. Computer diagnostics, compression and sensor measurements pinpoint the source of the problem (injector, turbo, sensors and so on), so you reach the solution directly without unnecessary expense.",
+        ],
+        scope: [
+          "Computer diagnostic testing",
+          "Compression measurement",
+          "Injector and fuel system inspection",
+          "Turbo and air path inspection",
+          "Sensor measurements",
           "Post-repair road test",
         ],
       },
-      xentry: {
-        title: "Professional Diagnostics with Mercedes-Benz XENTRY",
-        excerpt:
-          "Full scan of every control unit using the genuine XENTRY system.",
-        intro: [
-          "XENTRY is Mercedes-Benz's own official diagnostic system. It reads control units that generic aftermarket tools cannot reach, applies the manufacturer's defined test procedures and reveals the real cause behind a fault code.",
-          "With a full scan of all control units, live data analysis and guided tests, we find the fault instead of guessing at it.",
-        ],
-        scope: [
-          "Full scan of all ECUs",
-          "Live data and actuator tests",
-          "Guided fault tracing",
-          "SCN coding",
-          "Detailed written report",
-        ],
-      },
-      electronics: {
-        title: "Electronic System Fault Diagnosis",
-        excerpt:
-          "Lasting repairs for wiring looms, sensors and communication lines.",
-        intro: [
-          "A modern Mercedes-Benz has more than 70 control units communicating over CAN and LIN buses. A single chafed wire, a corroded connector or a weak earth point can generate dozens of seemingly unrelated fault codes.",
-          "Replacing parts to narrow down this kind of fault is both expensive and ineffective. We trace the circuit physically with an oscilloscope and electrical measurements, and fix the fault at its source.",
-        ],
-        scope: [
-          "CAN/LIN bus analysis",
-          "Wiring loom and connector inspection",
-          "Sensor and actuator measurement",
-          "Parasitic drain detection",
-          "Lighting and comfort systems",
-        ],
-      },
-      coding: {
-        title: "Coding, Software Updates and Adaptation",
-        excerpt:
-          "Coding, updates and adaptation after component replacement.",
-        intro: [
-          "On a Mercedes-Benz, fitting a new part is not enough on its own: the component must be registered to the vehicle, coded against the VIN and, where required, updated. Skip this step and the part will not work or the car will light up a fault.",
-          "With genuine software access we carry out coding, adaptation and updates strictly to the manufacturer's procedure.",
-        ],
-        scope: [
-          "SCN coding",
-          "Software updates",
-          "Post-replacement adaptation",
-          "Key and immobiliser work",
-          "Optional equipment activation",
-          "Injector / transmission adaptation",
-        ],
-      },
-      maintenance: {
-        title: "Scheduled Maintenance",
-        excerpt:
-          "Documented servicing that follows the manufacturer's schedule.",
-        intro: [
-          "A service is more than an oil and filter change. The Mercedes-Benz ASSYST schedule defines a task list that varies with how the car is used; skipping items on that list affects both warranty and vehicle life.",
-          "We service to the manufacturer's procedure, document every operation and update the digital service record.",
-        ],
-        scope: [
-          "Work carried out to the ASSYST schedule",
-          "Engine oil and filter change",
-          "Brake, suspension and tyre inspection",
-          "Battery and charging system test",
-          "Digital service record update",
-          "Post-service condition report",
-        ],
-      },
       transmission: {
-        title: "Transmission Fault Diagnosis",
+        title: "Transmission Faults",
         excerpt:
-          "Electronic diagnosis and adaptation for 7G/9G-TRONIC gearboxes.",
+          "Targeted repair for shift shock, slipping and delayed engagement.",
         intro: [
-          "Harsh shifting, delayed engagement or limp-home mode on an automatic gearbox does not always mean mechanical damage. In many cases the cause is valve body electronics, speed sensors or corrupted adaptation values.",
-          "By reading live data from the transmission control unit we establish on the electronic side whether mechanical work is needed at all.",
+          "The transmission is the most delicate and complex system in the drivetrain, transferring engine power to the wheels. Degraded oil quality, gear wear or hydraulic and electronic unit problems announce themselves as shift shock, slipping, delayed engagement or the vehicle dropping into protection mode.",
+          "Transmission diagnosis starts by reading the fault codes and carrying out hydraulic pressure tests. By examining the degree of wear and how the electronic control unit responds, we aim for a targeted repair or overhaul rather than a complete replacement.",
         ],
         scope: [
-          "Transmission control unit scan",
-          "Live data and pressure value analysis",
-          "Valve body electronics check",
-          "Adaptation reset and relearn",
+          "Fault code readout and analysis",
+          "Hydraulic pressure testing",
+          "Electronic control unit inspection",
+          "Assessment of the degree of wear",
+          "Targeted repair and overhaul",
           "Oil and filter change",
-          "Road test verification",
+        ],
+      },
+      brakes: {
+        title: "EBS & ABS Brake Systems",
+        excerpt:
+          "Sensor, valve and modulator diagnosis that never compromises safety.",
+        intro: [
+          "ABS and EBS systems preserve steering control under hard braking by preventing the wheels from locking. Contaminated sensors, breaks in the wiring loom or valve and modulator faults reveal themselves through a hard brake pedal, warnings in the instrument cluster and longer stopping distances.",
+          "We check the wheel speed sensors, pressure modulators and control unit communication with an oscilloscope and dedicated test equipment. Only the faulty line or module is identified and repaired, with no compromise to driving safety.",
+        ],
+        scope: [
+          "Wheel speed sensor inspection",
+          "Pressure modulator testing",
+          "Wiring loom and connector inspection",
+          "Signal analysis with an oscilloscope",
+          "Brake control unit communication check",
+          "Clearing instrument cluster warnings",
         ],
       },
       climate: {
-        title: "Climate and Comfort Systems",
+        title: "Vehicle Air Conditioning Systems",
         excerpt:
-          "Fault diagnosis for air conditioning, seats, windows and comfort electronics.",
+          "UV leak detection, regassing, compressor testing and system hygiene.",
         intro: [
-          "Poor air conditioning performance is usually not a matter of low refrigerant — it more often comes down to the pressure sensor, the compressor control valve or the climate control unit. Seat, window and door module faults are equally electronic in nature.",
-          "We measure first on comfort systems, which avoids unnecessary regassing and part replacement.",
+          "Air conditioning is not only about summer comfort — it is vital for clearing misted windows quickly in winter and for cabin air quality. Refrigerant leaks, a seized compressor or a blocked cabin filter show up as weak cooling or heating, bad odours and unusual engine noise when the A/C is switched on.",
+          "Leak points are pinpointed with UV tracer gas and precise pressure testing. Regassing, compressor testing and bacterial system hygiene bring your air conditioning back to maximum efficiency.",
         ],
         scope: [
-          "A/C circuit pressure and leak test",
-          "Compressor and control valve inspection",
-          "Climate control unit scan",
-          "Seat, window and door module faults",
-          "Temperature and air quality sensors",
-          "Regassing and disinfection",
+          "Leak detection with UV tracer gas",
+          "Precise pressure testing",
+          "Compressor testing and inspection",
+          "Refrigerant evacuation and recharge",
+          "Cabin filter replacement",
+          "Bacterial system hygiene",
         ],
       },
-      inspection: {
-        title: "Pre-Purchase Vehicle Inspection",
+      egrdpf: {
+        title: "EGR & DPF Faults",
         excerpt:
-          "Electronic and mechanical condition report before buying used.",
+          "Regeneration, professional cleaning and root-cause repair for soot blockages.",
         intro: [
-          "The true condition of a used Mercedes-Benz cannot be judged by eye. Cleared fault memories, past airbag deployment, mileage inconsistencies and repaired damage only surface when the control units are read.",
-          "Our pre-purchase inspection hands you the car's electronic history and mechanical condition as a written report.",
+          "The EGR system and the diesel particulate filter (DPF) trap harmful particles in the exhaust gas and keep them out of the environment. Short urban journeys and unsuitable oil or fuel cause soot build-up, blockage, an illuminated engine warning light and a noticeable loss of power.",
+          "On blocked DPF and EGR systems we measure the physical soot level and verify the sensor values before any replacement. Regeneration, professional cleaning or component repair resolves the underlying cause of the blockage — an injector or sensor fault — so the problem does not return.",
         ],
         scope: [
-          "Fault memory history across all control units",
-          "Mileage and service record consistency check",
-          "Airbag and safety system history",
-          "Engine and transmission live data analysis",
-          "Bodywork and paint thickness measurement",
-          "Written inspection report with photographs",
+          "Physical soot level measurement",
+          "Differential pressure and temperature sensor verification",
+          "Forced regeneration",
+          "Professional DPF and EGR cleaning",
+          "EGR valve repair or replacement",
+          "Rectification of the root cause of the blockage",
         ],
       },
     },
@@ -295,11 +263,12 @@ export const en: Dictionary = {
     errorTitle: "Your request could not be sent.",
     errorFallback: "You can also call us directly:",
     serviceOptions: {
-      ecu: "Engine ECU Fault Diagnosis",
-      xentry: "XENTRY Diagnostics",
-      electronics: "Electronic System Fault Diagnosis",
-      coding: "Coding / Software Update",
-      maintenance: "Scheduled Maintenance",
+      adblue: "AdBlue Systems",
+      engine: "Engine System Faults",
+      transmission: "Transmission Faults",
+      brakes: "EBS & ABS Brake Systems",
+      climate: "Vehicle Air Conditioning Systems",
+      egrdpf: "EGR & DPF Faults",
       other: "Other / Not sure",
     },
     errors: {
@@ -392,27 +361,43 @@ export const en: Dictionary = {
   faq: {
     title: "Frequently Asked Questions",
     description:
-      "Answers to the most common questions about warranty, diagnostic times, genuine parts and cost.",
+      "Answers to the most common questions about AdBlue, DPF, transmission, brake and air conditioning faults, plus warranty, genuine parts and cost.",
     items: {
       warranty: {
         question: "Will servicing outside an authorised dealer void my warranty?",
         answer:
           "Under current Turkish legislation, having your car serviced outside an authorised dealer does not in itself void your warranty; however, faults caused directly by the work carried out may fall outside warranty cover. That is why using genuine parts, following the manufacturer's procedure and documenting everything is standard practice for us. All work is invoiced and recorded.",
       },
-      "ecu-symptoms": {
-        question: "How do I know if the engine ECU is faulty?",
+      "adblue-warning": {
+        question:
+          "I have an AdBlue warning and a mileage countdown in the cluster — will my vehicle stop running?",
         answer:
-          "The most common symptoms are: hard starting or no start at all, rough idling, sudden power loss, a permanently lit engine warning light, the diagnostic tool failing to communicate with the unit, and an unexplained rise in fuel consumption. Many of these can have causes outside the ECU, so measurements must always be taken before a unit is declared faulty.",
+          "The countdown is the grace period you are given from the moment the system detects the fault. Once it reaches zero the vehicle first restricts engine torque, and then may not restart after you switch off the ignition. The warning is not only triggered by a low AdBlue level; crystallisation from poor-quality fluid, a failed pump or a blocked nozzle cause it too. Topping up the tank is therefore often not enough on its own — if the countdown continues, the system needs to be analysed. Bringing the vehicle in before it locks out keeps the work both quick and inexpensive.",
       },
-      "xentry-duration": {
-        question: "How long does XENTRY diagnostics take, and is it chargeable?",
+      "dpf-cleaning": {
+        question: "Can a blocked DPF be cleaned, or do I have to replace it?",
         answer:
-          "A standard full scan and report takes around 45–60 minutes. Guided testing can take longer on complex faults. Diagnostics is chargeable; if we carry out the repair, the fee is offset against the cost of the work. Please call us for current pricing.",
+          "In most cases replacement is not necessary. Before recommending one, we measure the physical soot level in the filter and verify that the differential pressure and temperature sensors are reading correctly. Depending on the degree of blockage we carry out a forced regeneration or professional cleaning. What matters most is resolving the root cause of the blockage — a faulty injector, a defective sensor, unsuitable oil or fuel, or constant short-distance driving. Without that, a new filter will block again just as quickly.",
+      },
+      "transmission-overhaul": {
+        question: "Does a transmission fault always mean a complete replacement?",
+        answer:
+          "No. Shift shock, slipping, delayed engagement or the car dropping into protection mode does not necessarily mean the gearbox has to be rebuilt. We first read the fault codes, run hydraulic pressure tests and examine how the electronic control unit responds. The problem often lies in oil quality or on the hydraulic or electronic side, in which case a targeted repair or overhaul replaces a full unit change. If mechanical wear really is advanced, we tell you clearly and show you the measurements behind that conclusion.",
+      },
+      "abs-warning": {
+        question: "The ABS/EBS light is on — can I keep driving?",
+        answer:
+          "Your brakes still work, but with ABS/EBS disabled the wheels can lock under hard braking, you can lose steering control and stopping distances get longer. We therefore advise against long journeys with the warning lit. The cause is usually a contaminated wheel speed sensor or a break in the wiring loom; using an oscilloscope and dedicated test equipment we identify and repair only the faulty line or module.",
+      },
+      "climate-gas": {
+        question: "My air conditioning isn't cooling — is a regas enough?",
+        answer:
+          "Refrigerant does not disappear on its own; the system is a sealed circuit, so if the charge is dropping there is a leak somewhere. A regas without finding that leak is lost within weeks. We locate the leak point first with UV tracer gas and precise pressure testing, then recharge the system. Weak cooling is not always about refrigerant either — a seized compressor or a blocked cabin filter produces the same complaint, and if there is a bad odour the system also needs bacterial hygiene treatment.",
       },
       "walk-in": {
         question: "Can I come without an appointment?",
         answer:
-          "You can, but there may be a wait depending on how busy we are. Electronic fault diagnosis requires both equipment and technician planning, so booking shortens the process and improves the chance of same-day handover.",
+          "You can, but there may be a wait depending on how busy we are. Fault diagnosis requires both equipment and technician planning, so booking shortens the process and improves the chance of same-day handover.",
       },
       "genuine-parts": {
         question: "Do you use genuine parts?",
@@ -471,7 +456,7 @@ export const en: Dictionary = {
     services: {
       title: "Our Services",
       description:
-        "Everything we do on Mercedes-Benz vehicles: engine ECU work, diagnostics, electronic fault finding and coding.",
+        "Everything we do: AdBlue, engine, transmission, EBS & ABS brake, air conditioning and EGR & DPF fault diagnosis and repair.",
     },
     appointment: {
       title: "Book a Service Appointment",
@@ -540,7 +525,7 @@ export const en: Dictionary = {
     faq: {
       title: "Frequently Asked Questions",
       description:
-        "Answers to the most common questions about warranty, diagnostic times, genuine parts and cost.",
+        "Answers to the most common questions about AdBlue, DPF, transmission, brake and air conditioning faults, plus warranty, genuine parts and cost.",
       stillQuestions: "Didn't find the answer you were looking for?",
       stillQuestionsCta: "Contact us",
     },
@@ -685,7 +670,7 @@ export const en: Dictionary = {
     services: {
       title: "Mercedes-Benz Service and Repair | Koluman İstanbul",
       description:
-        "ECU repair, XENTRY diagnostics, electronic fault finding, coding and software updates. All our Mercedes-Benz services.",
+        "AdBlue, engine, transmission, EBS & ABS brake, air conditioning and EGR & DPF fault diagnosis and repair. All our Mercedes-Benz services.",
     },
     appointment: {
       title: "Book a Service Appointment | Koluman İstanbul",
@@ -710,7 +695,7 @@ export const en: Dictionary = {
     faq: {
       title: "Frequently Asked Questions | Mercedes-Benz Service",
       description:
-        "Answers about warranty, diagnostic times, genuine parts and cost.",
+        "Answers about AdBlue, DPF, transmission, brake and air conditioning faults, warranty, genuine parts and cost.",
     },
     privacy: {
       title: "Privacy Policy | Koluman İstanbul",

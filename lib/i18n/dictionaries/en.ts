@@ -78,7 +78,6 @@ export const en: Dictionary = {
   trust: {
     label: "Service guarantees",
     items: {
-      authorized: "Authorised Service Assurance",
       software: "Genuine Software & Technical Data",
       technicians: "Specialist Electronics Technicians",
       diagnostics: "Advanced Diagnostic Technology",

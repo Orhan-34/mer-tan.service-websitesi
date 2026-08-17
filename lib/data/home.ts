@@ -31,7 +31,6 @@ export const heroSlideImages = [
 /* ── Trust bar ──────────────────────────────────────────────────── */
 
 export const trustItemIds = [
-  "authorized",
   "software",
   "technicians",
   "diagnostics",
@@ -40,7 +39,6 @@ export const trustItemIds = [
 export type TrustItemId = (typeof trustItemIds)[number];
 
 export const trustIcons: Record<TrustItemId, LucideIcon> = {
-  authorized: ShieldCheck,
   software: FileCode2,
   technicians: Users,
   diagnostics: Activity,

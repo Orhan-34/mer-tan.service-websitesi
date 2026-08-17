@@ -13,9 +13,9 @@ import { breadcrumbSchema } from "@/lib/schema";
 import { buildMetadata } from "@/lib/seo";
 
 const gallery = [
-  { src: "/images/about/atolye.jpg", key: "workshop" },
-  { src: "/images/about/ekip.jpg", key: "team" },
-  { src: "/images/about/ekipman.jpg", key: "equipment" },
+  { src: "/images/about/atolye.webp", key: "workshop" },
+  { src: "/images/about/ekip.webp", key: "team" },
+  { src: "/images/about/ekipman.webp", key: "equipment" },
 ] as const;
 
 export async function generateMetadata({

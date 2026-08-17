@@ -297,7 +297,7 @@ export const en: Dictionary = {
       booking: {
         title: "Booking and Initial Call",
         description:
-          "Fill in the form or call us; we listen to the symptom and plan a suitable time.",
+          "Get in touch with us; we listen to the symptom and plan a suitable time.",
       },
       diagnosis: {
         title: "Detailed Fault Diagnosis",

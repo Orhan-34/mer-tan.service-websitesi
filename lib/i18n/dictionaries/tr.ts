@@ -297,7 +297,7 @@ export const tr = {
       booking: {
         title: "Randevu ve Ön Görüşme",
         description:
-          "Formu doldurun ya da bizi arayın; arıza belirtinizi dinleyip uygun zamanı planlayalım.",
+          "Bizimle iletişime geçin; arıza belirtinizi dinleyip uygun zamanı planlayalım.",
       },
       diagnosis: {
         title: "Detaylı Arıza Tespiti",

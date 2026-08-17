@@ -76,7 +76,6 @@ export const tr = {
   trust: {
     label: "Servis güvenceleri",
     items: {
-      authorized: "Yetkili Servis Güvencesi",
       software: "Orijinal Yazılım ve Teknik Bilgi",
       technicians: "Uzman Elektronik Teknisyenleri",
       diagnostics: "Gelişmiş Arıza Tespit Teknolojileri",

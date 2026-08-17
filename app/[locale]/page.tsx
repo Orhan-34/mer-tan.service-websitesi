@@ -18,15 +18,16 @@ import { isLocale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
 import { faqPageSchema } from "@/lib/schema";
 import { buildMetadata } from "@/lib/seo";
-import { cn } from "@/lib/utils";
 
 /**
  * Anasayfadaki randevu formu (`id="randevu"`) geçici olarak pasif.
  *
  * Bileşen ve tüm form akışı (server action, doğrulama, e-posta) yerinde duruyor;
- * yalnızca anasayfada render edilmiyor. Kapalıyken "Neden biz" kartı tek başına
- * dar kolonda gösterilir. Yeniden yayına almak için bu bayrağı `true` yapmak
- * yeterli. `/randevu` ve `/iletisim` sayfalarındaki formlar bundan etkilenmez.
+ * yalnızca anasayfada render edilmiyor. Kapalıyken formun yeri boş kalmasın diye
+ * servis süreci kart hâlinde "Neden Biz"in yanına taşınır. Yeniden yayına almak
+ * için bu bayrağı `true` yapmak yeterli — süreç de otomatik olarak eski tam
+ * genişlikli bölümüne döner. `/randevu` ve `/iletisim` sayfalarındaki formlar
+ * bundan etkilenmez.
  */
 const HOME_APPOINTMENT_FORM_ENABLED: boolean = false;
 
@@ -62,23 +63,25 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
 
       {/* 6–9 · açık blok: iş yapma alanı */}
       <section className="bg-paper py-20 lg:py-28">
-        <Container size={HOME_APPOINTMENT_FORM_ENABLED ? "shell" : "narrow"}>
-          <div
-            className={cn(
-              "grid grid-cols-1 items-start gap-6 lg:gap-8",
-              HOME_APPOINTMENT_FORM_ENABLED &&
-                "lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)]",
-            )}
-          >
+        <Container>
+          {/* `items-stretch`: iki kart aynı boyda bitsin, beyaz alanlar eşitlensin. */}
+          <div className="grid grid-cols-1 items-stretch gap-6 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-8">
             <WhyUs locale={locale} dict={dict} />
+            {/*
+              Randevu formu pasifken sağ kolonu servis süreci kartı doldurur;
+              form geri açıldığında süreç, altta kendi tam genişlikli bölümüne
+              geri döner.
+            */}
             {HOME_APPOINTMENT_FORM_ENABLED ? (
               <AppointmentForm locale={locale} dict={dict} />
-            ) : null}
+            ) : (
+              <ProcessTimeline dict={dict} variant="card" />
+            )}
           </div>
         </Container>
       </section>
 
-      <ProcessTimeline dict={dict} />
+      {HOME_APPOINTMENT_FORM_ENABLED ? <ProcessTimeline dict={dict} /> : null}
       <TestimonialSlider dict={dict} />
 
       <section className="bg-paper py-16 lg:py-20">

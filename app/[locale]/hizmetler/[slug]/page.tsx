@@ -1,14 +1,11 @@
-import { Check, ChevronRight } from "lucide-react";
+import { Check } from "lucide-react";
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 import { ServiceCard } from "@/components/cards/service-card";
 import { PageHeader } from "@/components/layout/page-header";
 import { JsonLd } from "@/components/shared/json-ld";
-import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
-import { IconCircle } from "@/components/ui/icon-circle";
 import { SectionHeading } from "@/components/ui/section-heading";
 import {
   findServiceBySlug,
@@ -21,7 +18,6 @@ import { getDictionary } from "@/lib/i18n/dictionaries";
 import { path } from "@/lib/i18n/routes";
 import { breadcrumbSchema, serviceSchema } from "@/lib/schema";
 import { buildMetadata } from "@/lib/seo";
-import { siteConfig } from "@/lib/site-config";
 
 export function generateStaticParams() {
   return locales.flatMap((locale) =>
@@ -131,33 +127,6 @@ export default async function ServiceDetailPage({
                   className="object-cover"
                 />
               </div>
-
-              <div className="mt-6 rounded-md bg-paper-card p-6 shadow-[var(--shadow-card)]">
-                <div className="flex items-start gap-3">
-                  <IconCircle icon={meta.icon} size={32} tone="light" />
-                  <div>
-                    <h2 className="text-h4 text-fg-light">
-                      {dict.services.detailCtaTitle}
-                    </h2>
-                    <p className="text-body-sm mt-2 text-fg-light-muted">
-                      {dict.services.detailCtaText}
-                    </p>
-                  </div>
-                </div>
-
-                <div className="mt-6 flex flex-col gap-3">
-                  <Button asChild variant="primary-dark" size="md">
-                    <Link href={path(locale, "appointment")}>
-                      {dict.common.bookAppointmentLong}
-                    </Link>
-                  </Button>
-                  <Button asChild variant="outline-dark" size="md">
-                    <a href={`tel:${siteConfig.contact.phone}`}>
-                      {dict.common.callNow} · {siteConfig.contact.phoneDisplay}
-                    </a>
-                  </Button>
-                </div>
-              </div>
             </aside>
           </div>
         </Container>
@@ -186,18 +155,6 @@ export default async function ServiceDetailPage({
               />
             ))}
           </div>
-
-          <Link
-            href={path(locale, "appointment")}
-            className="group mt-10 inline-flex items-center gap-1 text-[13px] text-fg-dark-muted transition-colors hover:text-white"
-          >
-            {dict.common.bookAppointmentLong}
-            <ChevronRight
-              className="size-4 transition-transform group-hover:translate-x-0.5"
-              strokeWidth={1.5}
-              aria-hidden="true"
-            />
-          </Link>
         </Container>
       </section>
 

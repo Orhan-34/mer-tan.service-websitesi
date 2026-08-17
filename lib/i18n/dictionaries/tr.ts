@@ -80,9 +80,6 @@ export const tr = {
     heading: "Hizmetlerimiz",
     scopeTitle: "Kapsam",
     relatedTitle: "İlgili Diğer Hizmetler",
-    detailCtaTitle: "Bu arıza için randevu oluşturun.",
-    detailCtaText:
-      "Belirtiyi tarif edin, teknisyenimiz uygun zamanı planlasın. Onayınız olmadan hiçbir işlem yapılmaz.",
     items: {
       adblue: {
         title: "AdBlue Sistemleri",

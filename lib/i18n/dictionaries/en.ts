@@ -81,9 +81,6 @@ export const en: Dictionary = {
     heading: "Our Services",
     scopeTitle: "What's included",
     relatedTitle: "Related Services",
-    detailCtaTitle: "Book an appointment for this fault.",
-    detailCtaText:
-      "Describe the symptom and our technician will plan a suitable slot. Nothing is carried out without your approval.",
     items: {
       adblue: {
         title: "AdBlue Systems",

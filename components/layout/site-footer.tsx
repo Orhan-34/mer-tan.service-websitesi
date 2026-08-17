@@ -1,7 +1,7 @@
 import { Clock, Mail, MapPin, Phone } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 import { Logo } from "@/components/layout/logo";
+import { HoursBadge } from "@/components/shared/hours-badge";
 import { socialLinks } from "@/components/shared/social-icons";
 import { Container } from "@/components/ui/container";
 import { IconCircle } from "@/components/ui/icon-circle";
@@ -76,30 +76,10 @@ export function SiteFooter({
                   <p className="text-[11px] text-fg-dark-subtle">
                     {dict.common.workingHours}
                   </p>
-                  <ul className="mt-0.5 space-y-0.5">
-                    {dict.hours.map((row) => (
-                      <li key={row.days} className="text-[12.5px] text-white">
-                        {row.days}: {row.time}
-                      </li>
-                    ))}
-                  </ul>
+                  <HoursBadge dict={dict} className="mt-1.5" />
                 </div>
               </li>
             </ul>
-
-            <Link
-              href={path(locale, "contact")}
-              className="mt-6 inline-block overflow-hidden rounded-sm border border-line-dark"
-            >
-              <span className="sr-only">{dict.footer.mapPreview}</span>
-              <Image
-                src="/images/map-static.svg"
-                alt=""
-                width={200}
-                height={112}
-                className="h-auto w-[200px]"
-              />
-            </Link>
           </div>
 
           {/* ── Kolon 2: marka ────────────────────────────── */}

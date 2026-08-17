@@ -53,7 +53,7 @@ export default async function ServicesPage({
         withHeading={false}
       />
 
-      <ClosingCta locale={locale} dict={dict} />
+      <ClosingCta dict={dict} />
 
       <JsonLd data={breadcrumbSchema(crumbs)} />
     </>

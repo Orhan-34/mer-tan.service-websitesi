@@ -25,8 +25,12 @@
   /* ── Durum renkleri ───────────────────────────────────── */
   --color-success: #1e7b3c;
   --color-success-bg: #eaf5ee;
+  /* Koyu zeminde okunur yeşil — koyu tondaki #1e7b3c yeterince ayrışmıyor. */
+  --color-success-on-dark: #4ade80;
   --color-error: #b3261e;
   --color-error-bg: #fbedec;
+  /* Koyu zeminde okunur kırmızı — #b3261e koyu arka planda sönük kalıyor. */
+  --color-error-on-dark: #f87171;
   --color-focus-ring: #3b82f6;
 
   /* ── Tipografi ────────────────────────────────────────── */

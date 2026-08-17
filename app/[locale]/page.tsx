@@ -99,7 +99,7 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
       </section>
 
       {/* 10–11 · koyu kapanış */}
-      <ClosingCta locale={locale} dict={dict} />
+      <ClosingCta dict={dict} />
 
       <JsonLd data={faqPageSchema(faqItems)} />
     </>

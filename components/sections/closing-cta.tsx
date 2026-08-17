@@ -1,20 +1,11 @@
-import { ChevronRight, Clock, Phone } from "lucide-react";
-import Link from "next/link";
+import { ChevronRight, Phone } from "lucide-react";
 import { MapEmbed } from "@/components/shared/map-embed";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
-import type { Locale } from "@/lib/i18n/config";
 import type { Dictionary } from "@/lib/i18n/dictionaries";
-import { path } from "@/lib/i18n/routes";
 import { siteConfig } from "@/lib/site-config";
 
-export function ClosingCta({
-  locale,
-  dict,
-}: {
-  locale: Locale;
-  dict: Dictionary;
-}) {
+export function ClosingCta({ dict }: { dict: Dictionary }) {
   return (
     <section className="bg-ink py-16 lg:py-20">
       <Container>
@@ -26,30 +17,29 @@ export function ClosingCta({
               {dict.closing.text}
             </p>
 
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Button asChild variant="primary" size="lg">
-                <Link href={path(locale, "appointment")}>
-                  {dict.common.bookAppointmentLong}
-                </Link>
-              </Button>
-              <Button asChild variant="outline-light" size="lg">
+            <div className="mt-8">
+              {/* Tek CTA kaldı: buton, eskiden iki butonun kapladığı genişliği alır. */}
+              <Button
+                asChild
+                variant="outline-light"
+                size="lg"
+                className="w-full max-w-[360px]"
+              >
                 <a href={`tel:${siteConfig.contact.phone}`}>
                   <Phone className="size-4" strokeWidth={1.5} aria-hidden="true" />
                   {dict.common.callNow}
                 </a>
               </Button>
             </div>
-
-            <p className="mt-6 flex items-center gap-2 text-[12.5px] text-fg-dark-subtle">
-              <Clock className="size-4" strokeWidth={1.5} aria-hidden="true" />
-              {dict.hoursShort}
-            </p>
           </div>
 
           <div>
             <MapEmbed
               dict={dict}
-              embedUrl={process.env.NEXT_PUBLIC_GOOGLE_MAPS_EMBED_URL}
+              embedUrl={
+                process.env.NEXT_PUBLIC_GOOGLE_MAPS_EMBED_URL ??
+                siteConfig.address.mapEmbedUrl
+              }
             />
 
             <a

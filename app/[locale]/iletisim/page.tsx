@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { PageHeader } from "@/components/layout/page-header";
 import { AppointmentForm } from "@/components/sections/appointment-form";
+import { HoursBadge } from "@/components/shared/hours-badge";
 import { JsonLd } from "@/components/shared/json-ld";
 import { MapEmbed } from "@/components/shared/map-embed";
 import { Button } from "@/components/ui/button";
@@ -124,21 +125,7 @@ export default async function ContactPage({
                   <p className="text-[11px] text-fg-dark-subtle">
                     {dict.common.workingHours}
                   </p>
-                  <table className="mt-1">
-                    <tbody>
-                      {dict.hours.map((row) => (
-                        <tr key={row.days}>
-                          <th
-                            scope="row"
-                            className="pr-6 text-left text-[13px] font-normal text-fg-dark-muted"
-                          >
-                            {row.days}
-                          </th>
-                          <td className="text-[13px] text-white">{row.time}</td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
+                  <HoursBadge dict={dict} className="mt-2" />
                 </div>
               </li>
             </ul>
@@ -146,7 +133,10 @@ export default async function ContactPage({
             <div>
               <MapEmbed
                 dict={dict}
-                embedUrl={process.env.NEXT_PUBLIC_GOOGLE_MAPS_EMBED_URL}
+                embedUrl={
+                  process.env.NEXT_PUBLIC_GOOGLE_MAPS_EMBED_URL ??
+                  siteConfig.address.mapEmbedUrl
+                }
               />
               <Button asChild variant="outline-light" size="md" className="mt-4">
                 <a

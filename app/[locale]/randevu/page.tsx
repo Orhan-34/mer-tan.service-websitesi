@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { PageHeader } from "@/components/layout/page-header";
 import { AppointmentForm } from "@/components/sections/appointment-form";
+import { HoursBadge } from "@/components/shared/hours-badge";
 import { JsonLd } from "@/components/shared/json-ld";
 import { Container } from "@/components/ui/container";
 import { IconCircle } from "@/components/ui/icon-circle";
@@ -104,11 +105,7 @@ export default async function AppointmentPage({
                     <p className="text-[11px] text-fg-light-subtle">
                       {dict.common.workingHours}
                     </p>
-                    {dict.hours.map((row) => (
-                      <p key={row.days} className="text-[13px] text-fg-light">
-                        {row.days}: {row.time}
-                      </p>
-                    ))}
+                    <HoursBadge dict={dict} tone="light" className="mt-1.5" />
                   </div>
                 </li>
 

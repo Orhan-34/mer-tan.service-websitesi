@@ -79,16 +79,13 @@ export const processIcons: Record<ProcessStepId, LucideIcon> = {
 /* ── SSS ────────────────────────────────────────────────────────── */
 
 export const faqIds = [
-  "warranty",
   "adblue-warning",
   "dpf-cleaning",
   "transmission-overhaul",
   "abs-warning",
   "climate-gas",
-  "walk-in",
   "genuine-parts",
   "cost-estimate",
-  "courtesy-car",
   "models",
 ] as const;
 export type FaqId = (typeof faqIds)[number];

@@ -361,13 +361,8 @@ export const tr = {
   faq: {
     title: "Sıkça Sorulan Sorular",
     description:
-      "AdBlue, DPF, şanzıman, fren ve klima arızaları ile garanti, orijinal parça ve maliyet hakkında en çok sorulan soruların yanıtları.",
+      "AdBlue, DPF, şanzıman, fren ve klima arızaları ile orijinal parça ve maliyet hakkında en çok sorulan soruların yanıtları.",
     items: {
-      warranty: {
-        question: "Yetkili servis dışında yaptırdığım işlem garantimi etkiler mi?",
-        answer:
-          "Türkiye'de yürürlükteki mevzuat gereği, aracınızın bakımını yetkili servis dışında yaptırmanız garantinizi kendiliğinden geçersiz kılmaz; ancak yapılan işlemin doğrudan neden olduğu arızalar garanti kapsamı dışında kalabilir. Bu nedenle orijinal parça kullanımı, üretici prosedürüne uygun işlem ve belgelendirme bizim için standarttır. Tüm işlemleriniz faturalandırılır ve kayıt altına alınır.",
-      },
       "adblue-warning": {
         question:
           "Göstergede AdBlue uyarısı ve kilometre geri sayımı çıktı, aracım çalışmayı durdurur mu?",
@@ -394,11 +389,6 @@ export const tr = {
         answer:
           "Gaz eksilmesi kendiliğinden olmaz; sistem kapalı devredir, gaz azalıyorsa bir yerde kaçak vardır. Kaçak bulunmadan yapılan dolum kısa sürede boşa gider. Biz önce UV kaçak arama gazı ve hassas basınç testleriyle sızıntı noktasını tespit ediyor, ardından dolumu yapıyoruz. Yetersiz soğutmanın nedeni her zaman gaz da değildir — kompresör kilitlenmesi veya tıkalı kabin filtresi de aynı şikâyeti yaratır; kötü koku varsa sistemin bakteriyel hijyeni de gerekir.",
       },
-      "walk-in": {
-        question: "Randevusuz gelebilir miyim?",
-        answer:
-          "Gelebilirsiniz, ancak yoğunluğa bağlı olarak bekleme süresi oluşabilir. Arıza tespiti cihaz ve teknisyen planlaması gerektirdiği için randevulu gelmeniz hem işlem süresini kısaltır hem de aynı gün teslim ihtimalini artırır.",
-      },
       "genuine-parts": {
         question: "Orijinal parça kullanıyor musunuz?",
         answer:
@@ -409,15 +399,10 @@ export const tr = {
         answer:
           "Arıza tespiti tamamlandıktan sonra yapılacak işlemler, kullanılacak parçalar ve toplam maliyet size yazılı olarak iletilir. Onayınız alınmadan hiçbir işleme başlanmaz. Tespit sırasında ek bir arıza ortaya çıkarsa tekrar bilgilendirilirsiniz.",
       },
-      "courtesy-car": {
-        question: "Aracımı bırakırsam ikame araç veriliyor mu?",
-        answer:
-          "[Uygunluk durumuna göre doldurulacak: ikame araç hizmetimiz mevcuttur / belirli işlemlerde sunulmaktadır.] Detay için randevu sırasında bilgi verebiliriz.",
-      },
       models: {
         question: "Hangi Mercedes-Benz modellerine hizmet veriyorsunuz?",
         answer:
-          "A, B, C, E, S serisi; CLA, CLS, GLA, GLB, GLC, GLE, GLS; SLK/SLC; V-Class, Vito ve Sprinter dâhil binek ve hafif ticari Mercedes-Benz modellerinin tamamına hizmet veriyoruz. AMG modellerinde de elektronik arıza tespiti yapılmaktadır.",
+          "A, B, C, E, S serisi; CLA, CLS, GLA, GLB, GLC, GLE, GLS; SLK/SLC; V-Class, Vito ve Sprinter dâhil binek ve hafif ticari Mercedes-Benz modellerinin tamamına hizmet veriyoruz. Bunun yanında otobüs, tır ve ağır ticari Mercedes-Benz araçlara da hizmet veriyoruz. AMG modellerinde de elektronik arıza tespiti yapılmaktadır.",
       },
     },
   },
@@ -530,7 +515,7 @@ export const tr = {
     faq: {
       title: "Sıkça Sorulan Sorular",
       description:
-        "AdBlue, DPF, şanzıman, fren ve klima arızaları ile garanti, orijinal parça ve maliyet hakkında en çok sorulan soruların yanıtları.",
+        "AdBlue, DPF, şanzıman, fren ve klima arızaları ile orijinal parça ve maliyet hakkında en çok sorulan soruların yanıtları.",
       stillQuestions: "Sorunuzun cevabını bulamadınız mı?",
       stillQuestionsCta: "Bize ulaşın",
     },
@@ -700,7 +685,7 @@ export const tr = {
     faq: {
       title: "Sıkça Sorulan Sorular | Mercedes-Benz Servis",
       description:
-        "AdBlue, DPF, şanzıman, fren ve klima arızaları ile garanti, orijinal parça ve maliyet hakkında en çok sorulan soruların yanıtları.",
+        "AdBlue, DPF, şanzıman, fren ve klima arızaları ile orijinal parça ve maliyet hakkında en çok sorulan soruların yanıtları.",
     },
     privacy: {
       title: "Gizlilik Politikası | Koluman İstanbul",

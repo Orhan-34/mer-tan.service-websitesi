@@ -13,7 +13,8 @@
       "Bash(curl -s -o /dev/null -w \"%{http_code} -> %{redirect_url}\\\\n\" \"http://localhost:3000/tr/hizmetler/xentry-diagnostics\")",
       "Bash(curl -s http://localhost:3000/tr/sss)",
       "Bash(curl -s http://localhost:3000/sitemap.xml)",
-      "PowerShell(npx eslint . 2>&1)"
+      "PowerShell(npx eslint . 2>&1)",
+      "Bash(npx tsc *)"
     ]
   }
 }

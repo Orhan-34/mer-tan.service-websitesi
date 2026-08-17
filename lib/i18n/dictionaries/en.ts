@@ -361,13 +361,8 @@ export const en: Dictionary = {
   faq: {
     title: "Frequently Asked Questions",
     description:
-      "Answers to the most common questions about AdBlue, DPF, transmission, brake and air conditioning faults, plus warranty, genuine parts and cost.",
+      "Answers to the most common questions about AdBlue, DPF, transmission, brake and air conditioning faults, plus genuine parts and cost.",
     items: {
-      warranty: {
-        question: "Will servicing outside an authorised dealer void my warranty?",
-        answer:
-          "Under current Turkish legislation, having your car serviced outside an authorised dealer does not in itself void your warranty; however, faults caused directly by the work carried out may fall outside warranty cover. That is why using genuine parts, following the manufacturer's procedure and documenting everything is standard practice for us. All work is invoiced and recorded.",
-      },
       "adblue-warning": {
         question:
           "I have an AdBlue warning and a mileage countdown in the cluster — will my vehicle stop running?",
@@ -394,11 +389,6 @@ export const en: Dictionary = {
         answer:
           "Refrigerant does not disappear on its own; the system is a sealed circuit, so if the charge is dropping there is a leak somewhere. A regas without finding that leak is lost within weeks. We locate the leak point first with UV tracer gas and precise pressure testing, then recharge the system. Weak cooling is not always about refrigerant either — a seized compressor or a blocked cabin filter produces the same complaint, and if there is a bad odour the system also needs bacterial hygiene treatment.",
       },
-      "walk-in": {
-        question: "Can I come without an appointment?",
-        answer:
-          "You can, but there may be a wait depending on how busy we are. Fault diagnosis requires both equipment and technician planning, so booking shortens the process and improves the chance of same-day handover.",
-      },
       "genuine-parts": {
         question: "Do you use genuine parts?",
         answer:
@@ -409,15 +399,10 @@ export const en: Dictionary = {
         answer:
           "Once diagnosis is complete, you receive the planned work, the parts required and the total cost in writing. No work begins without your approval. If an additional fault emerges during diagnosis, we contact you again.",
       },
-      "courtesy-car": {
-        question: "Is a courtesy car available if I leave my vehicle?",
-        answer:
-          "[To be completed according to availability: a courtesy car service is available / is offered for certain work.] We can confirm the details when you book.",
-      },
       models: {
         question: "Which Mercedes-Benz models do you work on?",
         answer:
-          "We cover the full Mercedes-Benz passenger and light commercial range: A, B, C, E and S-Class; CLA, CLS, GLA, GLB, GLC, GLE, GLS; SLK/SLC; V-Class, Vito and Sprinter. We also carry out electronic fault diagnosis on AMG models.",
+          "We cover the full Mercedes-Benz passenger and light commercial range: A, B, C, E and S-Class; CLA, CLS, GLA, GLB, GLC, GLE, GLS; SLK/SLC; V-Class, Vito and Sprinter. We also serve buses, trucks and other heavy commercial Mercedes-Benz vehicles. We also carry out electronic fault diagnosis on AMG models.",
       },
     },
   },
@@ -530,7 +515,7 @@ export const en: Dictionary = {
     faq: {
       title: "Frequently Asked Questions",
       description:
-        "Answers to the most common questions about AdBlue, DPF, transmission, brake and air conditioning faults, plus warranty, genuine parts and cost.",
+        "Answers to the most common questions about AdBlue, DPF, transmission, brake and air conditioning faults, plus genuine parts and cost.",
       stillQuestions: "Didn't find the answer you were looking for?",
       stillQuestionsCta: "Contact us",
     },
@@ -700,7 +685,7 @@ export const en: Dictionary = {
     faq: {
       title: "Frequently Asked Questions | Mercedes-Benz Service",
       description:
-        "Answers about AdBlue, DPF, transmission, brake and air conditioning faults, warranty, genuine parts and cost.",
+        "Answers about AdBlue, DPF, transmission, brake and air conditioning faults, genuine parts and cost.",
     },
     privacy: {
       title: "Privacy Policy | Koluman İstanbul",

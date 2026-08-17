@@ -59,7 +59,6 @@ export const tr = {
 
   hero: {
     title: "Mercedes-Benz'iniz emin ellerde.",
-    ctaPrimary: "Servis Randevusu Al",
     ctaSecondary: "Hizmetlerimizi İnceleyin",
     prev: "Önceki görsel",
     next: "Sonraki görsel",

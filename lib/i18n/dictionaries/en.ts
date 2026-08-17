@@ -60,7 +60,6 @@ export const en: Dictionary = {
 
   hero: {
     title: "Your Mercedes-Benz is in expert hands.",
-    ctaPrimary: "Book a Service Appointment",
     ctaSecondary: "Explore Our Services",
     prev: "Previous slide",
     next: "Next slide",

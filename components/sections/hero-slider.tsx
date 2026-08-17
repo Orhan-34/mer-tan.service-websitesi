@@ -183,28 +183,17 @@ export function HeroSlider({
           <div className="max-w-[560px]">
             <h1 className="text-display text-white">{dict.hero.title}</h1>
 
-            {/* Dar ekranda iki buton yan yana. Etiketler `lg` boyutunda tek
-                satırda ~439px tutuyor, 390px ekranda kullanılabilir alan ise
-                350px — bu yüzden mobilde eşit genişliğe bölünür ve metnin
-                sarmasına izin verilir (`whitespace-nowrap` geçersiz kılınır).
-                Yükseklik sabit `h-12` kalırsa iki satır taşacağı için mobilde
-                `h-auto` + `min-h-12`. `sm`'den itibaren eski davranış.
+            {/* Tek CTA. Dar ekranda satırın tamamını kaplar; `sm`'den itibaren
+                daha önce iki butonun birlikte kapladığı genişliğe sabitlenir,
+                böylece hero'nun yatay dengesi bozulmaz.
                 `pointer-events-auto` sarmalayıcıda olursa tüm şerit kaydırmayı
-                yutar, o yüzden butonların üzerinde. */}
-            <div className="mt-8 flex items-stretch gap-3 sm:flex-wrap sm:items-center">
-              <Button
-                asChild
-                variant="primary"
-                size="lg"
-                className="pointer-events-auto h-auto min-h-12 min-w-0 flex-1 whitespace-normal px-4 py-2.5 text-center leading-tight sm:h-12 sm:flex-none sm:whitespace-nowrap sm:px-7 sm:py-0"
-              >
-                <Link href={path(locale, "appointment")}>{dict.hero.ctaPrimary}</Link>
-              </Button>
+                yutar, o yüzden butonun üzerinde. */}
+            <div className="mt-8 flex">
               <Button
                 asChild
                 variant="outline-light"
                 size="lg"
-                className="pointer-events-auto h-auto min-h-12 min-w-0 flex-1 whitespace-normal px-4 py-2.5 text-center leading-tight sm:h-12 sm:flex-none sm:whitespace-nowrap sm:px-7 sm:py-0"
+                className="pointer-events-auto w-full sm:w-[420px]"
               >
                 <Link href={path(locale, "services")}>{dict.hero.ctaSecondary}</Link>
               </Button>

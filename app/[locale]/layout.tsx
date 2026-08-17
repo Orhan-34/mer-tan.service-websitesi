@@ -84,7 +84,7 @@ export default async function LocaleLayout({
         <main id="main">{children}</main>
 
         <SiteFooter locale={locale} dict={dict} />
-        <MobileActionBar locale={locale} dict={dict} />
+        <MobileActionBar dict={dict} />
         <CookieConsent locale={locale} dict={dict} />
 
         <JsonLd data={autoRepairSchema(locale, dict)} />

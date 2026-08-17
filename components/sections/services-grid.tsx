@@ -34,7 +34,12 @@ export function ServicesGrid({
           />
         ) : null}
 
-        <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        {/* Anasayfada 4 kart tek sıra, hizmetler sayfasında 6 kart iki sıra. */}
+        <div
+          className={`mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 ${
+            variant === "featured" ? "lg:grid-cols-4" : "lg:grid-cols-3"
+          }`}
+        >
           {ids.map((id, index) => {
             const meta = serviceMeta[id];
             const content = dict.services.items[id];

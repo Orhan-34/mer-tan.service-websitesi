@@ -16,6 +16,10 @@ import { breadcrumbSchema } from "@/lib/schema";
 import { buildMetadata } from "@/lib/seo";
 import { siteConfig, whatsappLink } from "@/lib/site-config";
 
+// Geçici olarak kapatıldı: "Bize yazın" formu ve "Kurumsal bilgiler" kutusu.
+// Tekrar yayına almak için true yapmak yeterli.
+const SHOW_CONTACT_FORM_SECTION = false;
+
 export async function generateMetadata({
   params,
 }: PageProps<"/[locale]/iletisim">): Promise<Metadata> {
@@ -153,31 +157,33 @@ export default async function ContactPage({
         </Container>
       </section>
 
-      <section className="bg-paper py-16 lg:py-20">
-        <Container>
-          <div className="mx-auto max-w-[720px] rounded-md bg-paper-card p-7 shadow-[var(--shadow-card)] lg:p-9">
-            <h2 className="text-h3 text-fg-light">{contact.formTitle}</h2>
-            <p className="text-body-sm mt-3 text-fg-light-muted">
-              {contact.formDescription}
-            </p>
-            <div className="mt-7">
-              <AppointmentForm
-                locale={locale}
-                dict={dict}
-                variant="plain"
-                id="iletisim-form"
-              />
+      {SHOW_CONTACT_FORM_SECTION ? (
+        <section className="bg-paper py-16 lg:py-20">
+          <Container>
+            <div className="mx-auto max-w-[720px] rounded-md bg-paper-card p-7 shadow-[var(--shadow-card)] lg:p-9">
+              <h2 className="text-h3 text-fg-light">{contact.formTitle}</h2>
+              <p className="text-body-sm mt-3 text-fg-light-muted">
+                {contact.formDescription}
+              </p>
+              <div className="mt-7">
+                <AppointmentForm
+                  locale={locale}
+                  dict={dict}
+                  variant="plain"
+                  id="iletisim-form"
+                />
+              </div>
             </div>
-          </div>
 
-          <div className="mx-auto mt-10 max-w-[720px] rounded-md border border-line-light p-6">
-            <h2 className="text-h4 text-fg-light">{contact.legalTitle}</h2>
-            <p className="text-body-sm mt-2 text-fg-light-muted">
-              {contact.legalNote}
-            </p>
-          </div>
-        </Container>
-      </section>
+            <div className="mx-auto mt-10 max-w-[720px] rounded-md border border-line-light p-6">
+              <h2 className="text-h4 text-fg-light">{contact.legalTitle}</h2>
+              <p className="text-body-sm mt-2 text-fg-light-muted">
+                {contact.legalNote}
+              </p>
+            </div>
+          </Container>
+        </section>
+      ) : null}
 
       <JsonLd data={breadcrumbSchema(crumbs)} />
     </>

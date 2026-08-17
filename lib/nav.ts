@@ -13,6 +13,7 @@ export type NavLink = { key: RouteKey; label: string; href: string };
 export function mainNav(locale: Locale, dict: Dictionary): NavLink[] {
   return [
     { key: "home", label: dict.nav.home, href: path(locale, "home") },
+    { key: "about", label: dict.nav.about, href: path(locale, "about") },
     { key: "services", label: dict.nav.services, href: path(locale, "services") },
     {
       key: "campaigns",
@@ -23,10 +24,14 @@ export function mainNav(locale: Locale, dict: Dictionary): NavLink[] {
   ];
 }
 
-/** Footer "Hızlı Linkler" kolonu — iletişim en sona alınır. */
+/**
+ * Footer "Hızlı Linkler" kolonu — hakkımızda SSS ile birlikte alta,
+ * iletişim ise en sona alınır.
+ */
 export function footerNav(locale: Locale, dict: Dictionary): NavLink[] {
+  const tail: RouteKey[] = ["about", "contact"];
   return [
-    ...mainNav(locale, dict).filter((link) => link.key !== "contact"),
+    ...mainNav(locale, dict).filter((link) => !tail.includes(link.key)),
     { key: "faq", label: dict.nav.faq, href: path(locale, "faq") },
     { key: "about", label: dict.nav.about, href: path(locale, "about") },
     { key: "contact", label: dict.nav.contact, href: path(locale, "contact") },

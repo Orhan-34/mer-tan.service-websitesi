@@ -113,15 +113,6 @@ export function MobileNavDrawer({
               )}
               <li className="border-b border-line-dark">
                 <Link
-                  href={path(locale, "about")}
-                  onClick={close}
-                  className="block py-4 text-[15px] text-white"
-                >
-                  {dict.nav.about}
-                </Link>
-              </li>
-              <li className="border-b border-line-dark">
-                <Link
                   href={path(locale, "faq")}
                   onClick={close}
                   className="block py-4 text-[15px] text-white"

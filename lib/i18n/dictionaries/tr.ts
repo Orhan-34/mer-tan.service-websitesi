@@ -10,7 +10,7 @@ import { siteConfig } from "@/lib/site-config";
 export const tr = {
   brand: {
     name: "Koluman İstanbul",
-    tagline: "Mercedes-Benz Yetkili Servisi",
+    tagline: "Mercedes-Benz Araçlarda Uzman Servis",
     blurb:
       "Mercedes-Benz araçlarda elektronik arıza tespiti ve motor beyni çözümlerinde uzman servis.",
   },
@@ -483,6 +483,11 @@ export const tr = {
       description:
         "Mercedes-Benz elektronik arıza tespiti ve motor beyni çözümlerinde uzman ekibimiz ve teknolojik altyapımız.",
       lead: "Arızayı tahmin etmiyoruz — ölçüyoruz.",
+      gallery: {
+        workshop: "Koluman İstanbul servis atölyesi",
+        team: "Mercedes-Benz sistemleri üzerinde çalışan teknisyen ekibimiz",
+        equipment: "Elektronik arıza tespitinde kullandığımız ölçüm ekipmanları",
+      },
       sections: [
         {
           heading: "Neyi farklı yapıyoruz",
@@ -663,7 +668,7 @@ export const tr = {
 
   meta: {
     home: {
-      title: "Mercedes-Benz Yetkili Servisi İstanbul | Koluman",
+      title: "Mercedes-Benz Uzman Servisi İstanbul | Koluman",
       description:
         "Mercedes-Benz motor beyni (ECU) ve elektronik arıza tespitinde uzman servis. XENTRY diagnostik, kodlama ve yazılım güncelleme. Hemen randevu alın.",
     },

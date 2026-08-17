@@ -13,10 +13,10 @@ import { breadcrumbSchema } from "@/lib/schema";
 import { buildMetadata } from "@/lib/seo";
 
 const gallery = [
-  { src: "/images/about/atolye.svg", key: "workshop" },
-  { src: "/images/about/ekip.svg", key: "team" },
-  { src: "/images/about/ekipman.svg", key: "equipment" },
-];
+  { src: "/images/about/atolye.jpg", key: "workshop" },
+  { src: "/images/about/ekip.jpg", key: "team" },
+  { src: "/images/about/ekipman.jpg", key: "equipment" },
+] as const;
 
 export async function generateMetadata({
   params,
@@ -74,14 +74,14 @@ export default async function AboutPage({
 
         <Container className="mt-14">
           <ul className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-            {gallery.map((item, index) => (
+            {gallery.map((item) => (
               <li
                 key={item.key}
                 className="relative aspect-[3/2] overflow-hidden rounded-md border border-line-light"
               >
                 <Image
                   src={item.src}
-                  alt={about.sections[index + 1]?.heading ?? about.title}
+                  alt={about.gallery[item.key]}
                   fill
                   sizes="(max-width: 640px) 100vw, 33vw"
                   className="object-cover"

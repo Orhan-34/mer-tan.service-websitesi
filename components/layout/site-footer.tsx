@@ -1,5 +1,8 @@
+"use client";
+
 import { Clock, Mail, MapPin, Phone } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Logo } from "@/components/layout/logo";
 import { HoursBadge } from "@/components/shared/hours-badge";
 import { socialLinks } from "@/components/shared/social-icons";
@@ -10,6 +13,7 @@ import type { Dictionary } from "@/lib/i18n/dictionaries";
 import { path } from "@/lib/i18n/routes";
 import { footerNav } from "@/lib/nav";
 import { siteConfig } from "@/lib/site-config";
+import { cn } from "@/lib/utils";
 
 export function SiteFooter({
   locale,
@@ -18,74 +22,95 @@ export function SiteFooter({
   locale: Locale;
   dict: Dictionary;
 }) {
+  const pathname = usePathname();
   const fullAddress = `${siteConfig.address.street}, ${siteConfig.address.district} / ${siteConfig.address.city}`;
   const links = footerNav(locale, dict);
+
+  // İletişim sayfası aynı bilgileri zaten gösteriyor; tekrarı önlemek için
+  // iletişim kolonunu gizler, boşluğu marka kolonuna bırakırız.
+  const hideContact = pathname === path(locale, "contact");
 
   return (
     <footer role="contentinfo" className="border-t border-line-dark bg-ink">
       <Container className="pt-14">
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr] lg:gap-14">
+        <div
+          className={cn(
+            "grid gap-10 md:grid-cols-2 lg:gap-14",
+            hideContact
+              ? "lg:grid-cols-[1.4fr_1fr]"
+              : "lg:grid-cols-[1.4fr_1fr_1fr]",
+          )}
+        >
           {/* ── Kolon 1: iletişim ─────────────────────────── */}
-          <div>
-            <h2 className="text-h4 text-white">{dict.footer.contactTitle}</h2>
+          {hideContact ? null : (
+            <div>
+              <h2 className="text-h4 text-white">{dict.footer.contactTitle}</h2>
 
-            <ul className="mt-6 space-y-4">
-              <li className="flex items-start gap-3">
-                <IconCircle icon={MapPin} size={28} />
-                <div>
-                  <p className="text-[11px] text-fg-dark-subtle">
-                    {dict.common.address}
-                  </p>
-                  <p className="mt-0.5 text-[12.5px] text-white">{fullAddress}</p>
-                </div>
-              </li>
+              <ul className="mt-6 space-y-4">
+                <li className="flex items-start gap-3">
+                  <IconCircle icon={MapPin} size={28} />
+                  <div>
+                    <p className="text-[11px] text-fg-dark-subtle">
+                      {dict.common.address}
+                    </p>
+                    <p className="mt-0.5 text-[12.5px] text-white">
+                      {fullAddress}
+                    </p>
+                  </div>
+                </li>
 
-              <li className="flex items-start gap-3">
-                <IconCircle icon={Phone} size={28} />
-                <div>
-                  <p className="text-[11px] text-fg-dark-subtle">
-                    {dict.common.phone}
-                  </p>
-                  <a
-                    href={`tel:${siteConfig.contact.phone}`}
-                    className="mt-0.5 block text-[12.5px] text-white hover:underline"
-                  >
-                    {siteConfig.contact.phoneDisplay}
-                  </a>
-                </div>
-              </li>
+                <li className="flex items-start gap-3">
+                  <IconCircle icon={Phone} size={28} />
+                  <div>
+                    <p className="text-[11px] text-fg-dark-subtle">
+                      {dict.common.phone}
+                    </p>
+                    <a
+                      href={`tel:${siteConfig.contact.phone}`}
+                      className="mt-0.5 block text-[12.5px] text-white hover:underline"
+                    >
+                      {siteConfig.contact.phoneDisplay}
+                    </a>
+                  </div>
+                </li>
 
-              <li className="flex items-start gap-3">
-                <IconCircle icon={Mail} size={28} />
-                <div>
-                  <p className="text-[11px] text-fg-dark-subtle">
-                    {dict.common.email}
-                  </p>
-                  <a
-                    href={`mailto:${siteConfig.contact.email}`}
-                    className="mt-0.5 block text-[12.5px] text-white hover:underline"
-                  >
-                    {siteConfig.contact.email}
-                  </a>
-                </div>
-              </li>
+                <li className="flex items-start gap-3">
+                  <IconCircle icon={Mail} size={28} />
+                  <div>
+                    <p className="text-[11px] text-fg-dark-subtle">
+                      {dict.common.email}
+                    </p>
+                    <a
+                      href={`mailto:${siteConfig.contact.email}`}
+                      className="mt-0.5 block text-[12.5px] text-white hover:underline"
+                    >
+                      {siteConfig.contact.email}
+                    </a>
+                  </div>
+                </li>
 
-              <li className="flex items-start gap-3">
-                <IconCircle icon={Clock} size={28} />
-                <div>
-                  <p className="text-[11px] text-fg-dark-subtle">
-                    {dict.common.workingHours}
-                  </p>
-                  <HoursBadge dict={dict} className="mt-1.5" />
-                </div>
-              </li>
-            </ul>
-          </div>
+                <li className="flex items-start gap-3">
+                  <IconCircle icon={Clock} size={28} />
+                  <div>
+                    <p className="text-[11px] text-fg-dark-subtle">
+                      {dict.common.workingHours}
+                    </p>
+                    <HoursBadge dict={dict} className="mt-1.5" />
+                  </div>
+                </li>
+              </ul>
+            </div>
+          )}
 
           {/* ── Kolon 2: marka ────────────────────────────── */}
           <div>
             <Logo locale={locale} dict={dict} />
-            <p className="mt-5 max-w-[280px] text-[12.5px] leading-relaxed text-fg-dark-muted">
+            <p
+              className={cn(
+                "mt-5 text-[12.5px] leading-relaxed text-fg-dark-muted",
+                hideContact ? "max-w-[420px]" : "max-w-[280px]",
+              )}
+            >
               {dict.brand.blurb}
             </p>
 

@@ -22,7 +22,7 @@ export const siteConfig = {
   },
 
   address: {
-    street: "Muallimköy Mah. 1196/6. Sk.",
+    street: "Muallimköy Mah. Güney Yanyol Cad. No: 366/A",
     district: "Gebze",
     city: "Kocaeli",
     postalCode: "41400",

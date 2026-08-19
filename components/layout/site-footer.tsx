@@ -135,7 +135,7 @@ export function SiteFooter({
           </div>
 
           {/* ── Kolon 3: hızlı linkler ────────────────────── */}
-          <div>
+          <div className="text-center md:col-span-2 lg:col-span-1 lg:text-left">
             <h2 className="text-h4 text-white">{dict.footer.quickLinksTitle}</h2>
             <nav aria-label={dict.nav.footerLabel} className="mt-6">
               <ul className="space-y-2.5">
